@@ -1,0 +1,16 @@
+#include "studente.h"
+//...
+
+/* funzioni per l'inserimento dei valori degli elementi della struttura */
+//...
+int setMatricola(studente* Studente) {
+	//...
+}
+
+//...
+
+/* funzioni per ottenere i valori degli elementi della struttura */
+char* getNome(studente* Studente) {
+	return (Studente->nome);
+}
+//...
