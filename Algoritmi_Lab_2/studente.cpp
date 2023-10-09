@@ -76,16 +76,3 @@ void printStudente(studente* studente){
     std::cout << "Eta: " << getEta(studente) << std::endl;
     std::cout << "Matricola: " << getMatr(studente) << std::endl;    
 }
-
-int main() {
-    std::cout << "Hello, World!" << std::endl;
-
-    studente *studente1;
-    setMatr(studente1);
-    setNome(studente1);
-    setCognome(studente1);
-    setEta(studente1);
-
-    printStudente(studente1);
-    return 0;
-}
