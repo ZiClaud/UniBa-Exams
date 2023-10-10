@@ -70,9 +70,3 @@ int getMatr(studente* studente) {
     return (studente->matricola);
 }
 
-void printStudente(studente* studente){
-    std::cout << "Nome: " << getNome(studente) << std::endl;
-    std::cout << "Cognome: " << getCognome(studente) << std::endl;
-    std::cout << "Eta: " << getEta(studente) << std::endl;
-    std::cout << "Matricola: " << getMatr(studente) << std::endl;    
-}

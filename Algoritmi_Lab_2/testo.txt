@@ -56,7 +56,7 @@ char * getNome(studente *Studente){
 	return (Studente->Nome);
 }
 ...
-	
+
 Nel file provastudente.cpp implementare il main che definisce variabili di tipo studente e utilizza le funzioni definite nella libreria studente.h.
 Definire il tipo corso per la memorizzazione di un numero massimo di k di studenti. Prevedere una funzione di inserimento di nuovo studente e una funzione di lettura di uno studente. Scegliere fra una realizzazione statica o dinamica del tipo. Tenere traccia del numero di studenti iscritti al corso.
 Opzionale: risolvere lo stesso esercizio definendo la classe studente (piuttosto che la struttura) avente come metodi le precedenti funzioni.
