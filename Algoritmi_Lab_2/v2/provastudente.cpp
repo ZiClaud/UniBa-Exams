@@ -10,6 +10,8 @@ int main() {
     char n[30] = "Gianni";
     char c[30] = "Morandi";
     Studente studente1(255313, n, c, 32);
+    studente1.printStudente();
+
     studente1.setNome();
     studente1.setCognome();
     studente1.setEta();
