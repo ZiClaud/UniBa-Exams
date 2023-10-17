@@ -1,0 +1,30 @@
+
+
+class Point
+{
+public:
+    using coord_t = unsigned int;
+    Point()
+    { // Default constructor
+        x = -1;
+        y = -1;
+    }
+    Point(choord_t ix, choord_t iy)
+    {
+        x = ix;
+        y = iy:
+    };
+    choord_t get_x() const;
+    choord_t get_y() const;
+    void move_to(choord_t new_x, choord_t new_y);
+
+private:
+    choord_t x;
+    choord_t y;
+}
+
+Point p1,
+    p2;         // Default constructor aka Point()
+Point p3(2, 3); //
+
+Point::choord_t c1, c2;
