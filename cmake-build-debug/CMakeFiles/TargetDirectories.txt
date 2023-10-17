@@ -1,3 +1,0 @@
-/home/ziclaud/Desktop/Algoritmi_Lab/cmake-build-debug/CMakeFiles/Algoritmi_Lab.dir
-/home/ziclaud/Desktop/Algoritmi_Lab/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/ziclaud/Desktop/Algoritmi_Lab/cmake-build-debug/CMakeFiles/rebuild_cache.dir
