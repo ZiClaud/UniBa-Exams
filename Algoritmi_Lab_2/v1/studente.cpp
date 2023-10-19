@@ -5,7 +5,7 @@
 
 
 /* funzioni per l'inserimento dei valori degli elementi della struttura */
-int setNome(studente* studente){
+int setNome(studente *studente) {
     std::cout << "Inserire nome:\n";
     char nome[30];
     std::cin >> nome;
@@ -17,7 +17,7 @@ int setNome(studente* studente){
     return 0;
 }
 
-int setCognome(studente* studente){
+int setCognome(studente *studente) {
     std::cout << "Inserire cognome:\n";
     char cognome[30];
     std::cin >> cognome;
@@ -29,7 +29,7 @@ int setCognome(studente* studente){
     return 0;
 }
 
-int setEta(studente* studente) {
+int setEta(studente *studente) {
     std::cout << "Inserire eta:\n";
     int eta;
     std::cin >> eta;
@@ -37,11 +37,11 @@ int setEta(studente* studente) {
         std::cout << "Errore\n";
         return 1;
     }
-	studente->eta = eta;
+    studente->eta = eta;
     return 0;
 }
 
-int setMatr(studente* studente) {
+int setMatr(studente *studente) {
     std::cout << "Inserire matricola:\n";
     int matr;
     std::cin >> matr;
@@ -49,24 +49,24 @@ int setMatr(studente* studente) {
         std::cout << "Errore: matricola deve essere > 255312 e < 499999\n";
         return 1;
     }
-	studente->matricola = matr;
+    studente->matricola = matr;
     return 0;
 }
 
 /* funzioni per ottenere i valori degli elementi della struttura */
-char* getNome(studente* studente) {
-	return (studente->nome);
+char *getNome(studente *studente) {
+    return (studente->nome);
 }
 
-char* getCognome(studente* studente) {
-	return (studente->cognome);
+char *getCognome(studente *studente) {
+    return (studente->cognome);
 }
 
-int getEta(studente* studente) {
-	return (studente->eta);
+int getEta(studente *studente) {
+    return (studente->eta);
 }
 
-int getMatr(studente* studente) {
+int getMatr(studente *studente) {
     return (studente->matricola);
 }
 

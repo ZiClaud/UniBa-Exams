@@ -9,7 +9,7 @@ private:
 public:
     // requisito protezione...
     // metodi == operatori
-    bool isEmpty(){
+    bool isEmpty() {
         return (n_elems == 0);
     }
 };
@@ -17,13 +17,13 @@ public:
 
 class list2 {
     // head --> [_,_] --> [_,_] --> ...
-    
+
     // se head è vuoto:
     // head = nullptr;
 private:
     node *head; // Ci sarà class 'node' con 2 variabili: value e next
 public:
-    bool isEmpty(){
+    bool isEmpty() {
         //return (n_elems == 0);
         return (head == nullptr);
     }
@@ -35,7 +35,7 @@ private:
     int *values;
     int n_elems;
 public:
-    bool isEmpty(){
+    bool isEmpty() {
         return (n_elems == 0);
     }
 };
@@ -43,20 +43,19 @@ public:
 list3 l3 = list3(10);
 
 
-template <class T> // E' una generics adesso - Classe template - Classe astratta
+template<class T> // E' una generics adesso - Classe template - Classe astratta
 class list4 {
 private:
     T *values; // T -> Significa int, double, ...
     int n_elems;
 public:
-    bool isEmpty(){
+    bool isEmpty() {
         return (n_elems == 0);
     }
 };
 
 list4<int> a;
 list4<double> b;
-
 
 
 int i[10];

@@ -1,6 +1,7 @@
 #include "studente.h"
 #include "corso.h"
 #include <iostream>
+
 using namespace std;     // Removes std::
 
 // When there wasn't corso.cpp ->
@@ -9,15 +10,15 @@ using namespace std;     // Removes std::
 // Now that we have corso.cpp too ->
 // g++ -o provastudente provastudente.cpp studente.cpp corso.cpp
 
-void printStudente(studente* studente) {
+void printStudente(studente *studente) {
     cout << "Nome: " << getNome(studente) << endl;
     cout << "Cognome: " << getCognome(studente) << endl;
     cout << "Eta: " << getEta(studente) << endl;
-    cout << "Matricola: " << getMatr(studente) << endl;    
+    cout << "Matricola: " << getMatr(studente) << endl;
 }
 
-void printCorso(corso* corso) {
-    studente* studenti = getStudenti(corso);
+void printCorso(corso *corso) {
+    studente *studenti = getStudenti(corso);
     cout << "Nome corso: " << getNomeCorso(corso) << endl;
     for (int i = 0; i < getNumStudenti(corso); i++) {
         cout << "Studente " << i + 1 << ": " << studenti[i].matricola << endl;

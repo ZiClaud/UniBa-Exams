@@ -1,21 +1,23 @@
 
 
-class Point
-{
+class Point {
 public:
     using coord_t = unsigned int;
-    Point()
-    { // Default constructor
+
+    Point() { // Default constructor
         x = -1;
         y = -1;
     }
-    Point(choord_t ix, choord_t iy)
-    {
+
+    Point(choord_t ix, choord_t iy) {
         x = ix;
         y = iy:
     };
+
     choord_t get_x() const;
+
     choord_t get_y() const;
+
     void move_to(choord_t new_x, choord_t new_y);
 
 private:
@@ -31,12 +33,12 @@ Point::choord_t c1, c2;
 
 /// Valori di default
 
-void func(int a=1, int b=2) {
-    static int c = 10; 
+void func(int a = 1, int b = 2) {
+    static int c = 10;
     // Devo subito dare il valore iniziale
     // Viene eseguita una sola volta
     // Le altre volte il codice avrà il valore finale di "c"
-    
+
     /* Code */
 }
 
