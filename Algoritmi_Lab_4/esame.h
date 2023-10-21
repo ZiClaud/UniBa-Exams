@@ -23,6 +23,8 @@ public:
 
     bool isSostenuto();
 
+    void printEsame();
+
 private:
     string nome;
     bool sostenuto;

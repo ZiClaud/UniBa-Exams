@@ -1,3 +1,4 @@
+#include <iostream>
 #include "esame.h"
 
 Esame::Esame() {
@@ -46,4 +47,8 @@ void Esame::setVoto(int v) {
 
 bool Esame::isSostenuto() {
     return sostenuto;
+}
+
+void Esame::printEsame() {
+    cout << getEsame() << ": " << getVoto() << endl;
 }
