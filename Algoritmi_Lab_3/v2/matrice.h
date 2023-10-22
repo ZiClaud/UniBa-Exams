@@ -1,6 +1,9 @@
 #ifndef MATRIX_H
 #define MATRIX_H
 
+#include <iostream>
+using namespace std;
+
 typedef double tipoelem;
 
 // template <class T>
@@ -15,6 +18,7 @@ public:
     void prodottoScalare(double);
     Matrice trasposta();
     Matrice prodotto(Matrice M);
+    void printMatrix();
 private:
     int righe;
     int colonne;
