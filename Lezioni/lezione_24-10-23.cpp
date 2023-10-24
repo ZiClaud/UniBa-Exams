@@ -53,5 +53,30 @@ void duplicati(Lista<T> L) {
             p = L.succlista(p);
         }
     }
-}
+};
 
+// Slide pg 18.
+class List {
+public:
+    empty();
+private:
+    int elementi[10];   // Nella classe template -> *elementi
+    int n;
+};
+
+[v1, pnext]; // Realizzazione statica (uso array) con cursori (pnext)
+
+
+// Slide pg 36
+
+class Cella {
+    friend Lista;   // La classe Lista puo' accedere agli elementi di Cella
+private:
+    int v;
+    cella *next;
+};
+
+class Lista {
+private:
+    Cella *L;   // Punta alla prima cella
+};
