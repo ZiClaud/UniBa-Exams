@@ -1,7 +1,7 @@
 #include <iostream>
 #include "studente.h"
 
-int main() {
+int mainTestStudenteAlg4() {
     Studente s("Fisica", "ASD", "MAP", "Linguaggi", "Basi");
     s.setNome("Cica");
     s.setMatricola(1984195);

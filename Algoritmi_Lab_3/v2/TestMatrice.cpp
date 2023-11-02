@@ -1,6 +1,6 @@
 #include "matrice.h"
 
-int main() {
+int mainMatriceAlg3v2() {
     cout << "Hello, World!" << endl;
 
     Matrice A(2, 3);

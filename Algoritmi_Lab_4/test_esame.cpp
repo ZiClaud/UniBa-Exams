@@ -1,7 +1,7 @@
 #include <iostream>
 #include "esame.h"
 
-int main() {
+int mainTestEsameAlg4() {
     Esame e1 = Esame();
     Esame e2 = Esame("Fisica");
     Esame e3 = Esame("ASD", 30);

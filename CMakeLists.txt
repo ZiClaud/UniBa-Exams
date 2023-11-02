@@ -4,7 +4,7 @@ project(Algoritmi_Lab)
 set(CMAKE_CXX_STANDARD 17)
 
 add_executable(Algoritmi_Lab
-        Algoritmi_Lab_3/v2/matrice.h
-        Algoritmi_Lab_3/v2/matrice.cpp
-        Algoritmi_Lab_3/v2/TestMatrice.cpp
+        main.cpp
+        Algoritmi_Lab_5/list_operations.cpp
+        Algoritmi_Lab_5/list_operations.h
 )

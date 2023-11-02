@@ -48,7 +48,7 @@ Matrice Matrice::trasposta() {
     return matrice;
 }
 
-tipoelem getPordotto(Matrice &A, Matrice &B, int r, int c){
+tipoelem getPordotto(Matrice &A, Matrice &B, int r, int c) {
     tipoelem ris = 0;
 
     // TODO: Fix
@@ -57,7 +57,7 @@ tipoelem getPordotto(Matrice &A, Matrice &B, int r, int c){
             ris += A.leggimatrice(i, r) + B.leggimatrice(j, c);
         }
     }
-    
+
     return ris;
 }
 
@@ -88,7 +88,7 @@ int Matrice::getColomns() {
 }
 
 // Print (not asked)
-void Matrice::printMatrix(){
+void Matrice::printMatrix() {
     for (int i = 0; i < getRows(); ++i) {
         for (int j = 0; j < getColomns(); ++j) {
             cout << leggimatrice(i, j) << " ";

@@ -25,7 +25,7 @@ void printCorso(corso *corso) {
     }
 }
 
-int main() {
+int mainStudenteAlg2v1() {
     cout << "Inizio\n";
 
     studente studente1;

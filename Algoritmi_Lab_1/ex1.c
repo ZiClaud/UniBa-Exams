@@ -179,7 +179,7 @@ void clear(struct chain_item *item) {
     free(curr);
 }
 
-int main() {
+int mainAlg1() {
     int arr[6] = {1, 3, 3, 5, 7, 8};
 
     printf("greaterThan: %d\n", greaterThan(arr, 5, 4));

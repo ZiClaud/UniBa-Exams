@@ -5,7 +5,7 @@ using namespace std;
 
 // g++ -o provastudente provastudente.cpp studente.cpp
 
-int main() {
+int mainStudenteAlg2v2() {
     cout << "Inizio\n";
 
     char n[30] = "Gianni";

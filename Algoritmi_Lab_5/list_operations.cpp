@@ -14,7 +14,7 @@ template<class T>
 bool List_Operations<T>::palindoma(list<T> l) {
     T item;
     for (int i = 0; i < lunghezza(l); ++i) {
-        if (l[i] != l[lunghezza(l) - i]){
+        if (l[i] != l[lunghezza(l) - i]) {
             return false;
         }
     }

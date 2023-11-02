@@ -1,4 +1,5 @@
 1 Liste
+
 Esercizio 1.1
 Implementare
 una funzione per calcolare la lunghezza di una lista;
@@ -8,6 +9,7 @@ una funzione che stabilisca se una lista è palindroma.
  void inverti(Lista &);
  bool palindoma(Lista);
 Le funzioni possono anche essere implementate come metodi della classe astratta LinearList.
+
 Esercizio 1.2
 Liste lineari ordinate: particolare tipo di lista in cui l'ordine sequenziale degli elementi è legato ad una relazione d'ordine definita sugli elementi.
 Esempio: se gli elementi sono stringhe si suppone che l'odinamento sia per chiave alfabetica. A tale scopo sarà necessario definire gli operatori '<', '<=' e '>' per il tipo di dato stringa (Tali operatori sono già definiti per il tipo di dato string, definito nella libreria string. ).
@@ -15,6 +17,7 @@ Modificare l'operatore insLista per liste lineari ordinate (oppure definire un n
 implementare l'algoritmo di ricerca lineare ordinata;
 implementare l'algoritmo di fusione di liste ordinate;
 applicare le funzioni a liste lineari di stringhe ordinate per chiave alfabetica.
+
 Esercizio 1.3
 Multilista: supponendo di voler rappresentare un numero intero I mediante una lista, tale che il valore dell'elemento i-esimo della lista corrisponda a quello dell'i-esima cifra di I, definire una lista di interi ed implementare le funzioni per
 l'acquisizione di n interi

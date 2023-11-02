@@ -4,7 +4,7 @@
 using namespace std;
 
 
-int main() {
+int mainMatriceAlg3v1() {
     cout << "Hello, World!" << endl;
 
     Matrice A(2, 3);
