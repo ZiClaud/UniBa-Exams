@@ -2,18 +2,16 @@
 #define ALGORITMI_LAB_LIST_OPERATIONS_H
 
 #include <list>
-
 using namespace std;
 
-template<class T>
-class List_Operations {
-public:
-    int lunghezza(list<T>);
+//template<class T>
+int lunghezza(list<int>);
 
-    void inverti(list<T> &);
+//template<class T>
+void inverti(list<int> &);
 
-    bool palindoma(list<T>);
-};
+//template<class T>
+bool palindoma(list<int>);
 
 
 #endif //ALGORITMI_LAB_LIST_OPERATIONS_H
