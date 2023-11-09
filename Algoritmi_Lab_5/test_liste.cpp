@@ -1,7 +1,7 @@
 #include <iostream>
 #include "list_operations.h"
 
-int mainTestListeAlg5() {
+int main() {
 
     list<int> l = {1, 2, 3, 2, 1};
 //    l.push_back(3);
