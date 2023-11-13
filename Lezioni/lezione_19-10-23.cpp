@@ -25,11 +25,3 @@ class A {
     void f(T); // Generico
     void f(int); // Specializzazione -> Se usi un int usa questo codice
 };
-
-
-
-
-
-
-
-

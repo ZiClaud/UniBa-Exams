@@ -14,63 +14,60 @@ namespace std {
 // " << "     -> Operatore di ridirezione dell'output, può essere concatenato
 
 std::cout << "Hello world!" << "\n";
-std::cout << "Hello world!" <<
-std::endl;
+std::cout << "Hello world!" << std::endl;
 
 
 // Specifica sintattica:
 int fatt(int n);  // Forward declaration
 
 int bin(int n, int k) {
-    return fatt(n) /...;
+    return fatt(n);     // ... ;
 }
 
 
 // Cosa facevamo in C
-struct complex {
+struct complex0 {
     double r;
     double i;
 };
 
 // Cosa facremo in C++
-class complex {
+class complex1 {
 private:
     double r;
     double i;
 public:
-    complex(real, real);
+    complex1(int real, int imaginary);
 
     double getReal() {
-        return r1;
+        return r;
     }
 
-    complex sum(complex);
-    // double operator+(complex&); // -> Modifica l'operatore " + "
+    complex1 sum(complex1);
+    // double operator+(complex1&); // -> Modifica l'operatore " + "
 };
 
-complex c1; // Oggetto c1 (default)
+complex1 c1; // Oggetto c1 (default)
 
-complex c2(2, 3);
+complex1 c2(2, 3);
 
-c2.
-getReal; // Il punto significa 'applica' .-.
+c2.getReal; // Il punto significa 'applica' .-.
 
-complex c3 = c2.sum(c1);
+complex1 c3 = c2.sum(c1);
 
 // Rappresentiamolo come array
 class complex2 {
 private:
     double values[2];
 public:
-    complex(real, real
-    );
+    complex2(int real, int imaginary);
 
     double getReal() {
         return values[0];
     }
 
-    complex sum(complex);
-    // double operator+(complex&);
+    complex2 sum(complex2);
+    // double operator+(complex2&);
 };
 
 

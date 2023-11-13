@@ -1,10 +1,8 @@
-
 // Passo base: Lista vuota
 A = [];
 
 // Lista ricorsiva:
 A = [X][L];  // Dove L e' una lista, X un elemento
-
 
 
 // Slide: Liste pg 10
@@ -17,8 +15,7 @@ while (!finelista(p)) {
 listavuota = finelista(primolista());   // Se la lista e' vuota -> E' falso
 
 // Slide: Liste pg. 13 - inslista
-[a1, a2, a3] ->
-pos(2) [a1, a2, a, a3] o [a1, a, a2, a3]?
+[a1, a2, a3] -> pos(2) [a1, a2, a, a3] o [a1, a, a2, a3]?
 
 [a1, a, a2, a3]
 

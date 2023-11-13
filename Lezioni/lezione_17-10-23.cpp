@@ -1,8 +1,6 @@
-
-
 class Point {
 public:
-    using coord_t = unsigned int;
+    using choord_t = unsigned int;
 
     Point() { // Default constructor
         x = -1;
@@ -11,7 +9,7 @@ public:
 
     Point(choord_t ix, choord_t iy) {
         x = ix;
-        y = iy:
+        y = iy;
     };
 
     choord_t get_x() const;
