@@ -1,4 +1,6 @@
-// Code
+// Le Code
+
+// Ok
 void stampapila(Pila P) {
     if (!pilavuota(P)) {
         e = leggipila(P);
