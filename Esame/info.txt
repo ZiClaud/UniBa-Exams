@@ -1,6 +1,30 @@
 Esame diviso in due:
-- Laboratorio (primo)
-- Scritto (entro 90 giorni)
+# Laboratorio
+- (prima) - 1.30/2h
+Portare da casa: (penna usb) tutte le realizzazioni
+Non usare quelle del prof, hanno errori
+
+Il prof preferirebbe che usiamo il computer del lab, ma possiamo usare il nostro
+(NON DOBBIAMO CHIEDERE DOVE ATTACCARE IL CARICATORE)
 
 
+# Scritto (entro 90 giorni)
+1- C'è sempre il primo punto in cui chiede di dire la specifica sintattica e semantica di un tipo
+example: dato astratto istogramma
 
+Ci da gli operatori:
+creaIstogramma() -> instogramma,
+inserisciBin(instogramma, bin) -> instogramma,
+incrementaBin(instogramma, bin) -> instogramma,
+decrementaBin
+valoreBin
+moda
+media
+...
+
+
+2- Domande a risposta aperta:
+Spiegare la realizzazione di grafi,
+Fornire pseudocodice di ricerca BFS per alberi,
+Hash,
+...
