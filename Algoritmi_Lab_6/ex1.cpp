@@ -35,8 +35,8 @@ class MultipleStack {
     vector<stack<Object>> stacks = vector<stack<Object>>();
     unsigned int len;
 public:
-    MultipleStack(unsigned int lenght) {
-        len = lenght;
+    MultipleStack(unsigned int length) {
+        len = length;
         for (int i = 0; i < len; ++i) {
             stacks.push_back(stack<Object>());
         }
