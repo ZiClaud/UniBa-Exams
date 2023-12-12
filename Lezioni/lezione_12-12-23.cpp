@@ -50,6 +50,18 @@ void maxprof(Albero T, Nodo n, int prof, int &max) {
 }
 
 
+/// Rimuovi sottoalbero
+void removesubtree(Node n) {
+    if (!foglia(n)) {
+        Node q = primofiglio(n);
+        while (!ultimofiglio(q)) {
+            removesubtree(q);
+        }
+        removesubtree(q);
+    }
+    delete n;
+}
+
 
 
 
