@@ -18,6 +18,9 @@ bool MyList<T>::isEmpty() const {
 
 template<class T>
 bool MyList<T>::isEnd(int pos) const {
+    if (!isPosValid(pos)) {
+        throw;
+    }
     for (int i = pos; i < length; i++) {
         if (elements[i] != nullptr) {
             return false;
@@ -28,7 +31,7 @@ bool MyList<T>::isEnd(int pos) const {
 
 template<class T>
 int MyList<T>::getNext(int pos) const {
-    if (pos < length && elements[pos + 1] != nullptr) {
+    if (isPosValid(pos) && elements[pos + 1] != nullptr) {
         return pos + 1;
     }
     return -1;
@@ -36,7 +39,7 @@ int MyList<T>::getNext(int pos) const {
 
 template<class T>
 int MyList<T>::getPrevious(int pos) const {
-    if (pos > 0 && elements[pos - 1] != nullptr) {
+    if (isPosValid(pos) && elements[pos - 1] != nullptr) {
         return pos - 1;
     }
     return -1;
@@ -48,28 +51,57 @@ T MyList<T>::read(int pos) const {
 }
 
 template<class T>
+void MyList<T>::write(T elem, int pos) {
+    if (isPosValid(pos)) {
+        elements[pos] = elem;
+        cleanList();
+    }
+}
+
+template<class T>
 void MyList<T>::insert(T elem, int pos) {
-    // TODO: Check if pos is void, if not move everything to the right
-    elements[pos] = elem;
+    if (isPosValid(pos)) {
+        for (int i = 0; i < length; ++i) {
+            //TODO: Move everything to the right
+        }
+        elements[pos] = elem;
+        cleanList();
+    }
 }
 
 template<class T>
 void MyList<T>::remove(int pos) {
-    // TODO: Check if pos is void, if not move everything to the right
-    elements[pos] = nullptr;
+    if (isPosValid(pos)) {
+        elements[pos] = nullptr;
+        cleanList();
+    }
 }
 
 
 template<class T>
 bool MyList<T>::isPosValid(int pos) {
-
+    if (pos < 0 || pos > length) {
+        return false;
+    }
+    return true;
 }
 
 template<class T>
 void MyList<T>::cleanList() {
-    for (int i = 0; i < length; i++) {
-        if (elements[i] != nullptr) {
+    bool modified = false;
+    T prevElem;
+    T currElem;
 
+    for (int i = 1; i < length; i++) {
+        prevElem = elements[i - 1];
+        currElem = elements[i];
+        if (prevElem == nullptr && currElem != nullptr) {
+            modified = true;
+            elements[i - 1] = currElem;
+            elements[i] = prevElem;
         }
+    }
+    if (modified) {
+        cleanList();
     }
 }

@@ -1,10 +1,14 @@
-#include "LinkedList/MyLinkedList.h"
+#include <iostream>
+#include "MyList/MyList.h"
 
 using namespace std;
 
 int main() {
-    MyLinkedList<int> l = MyLinkedList<int>(5);
-    l.addNext(MyLinkedList(15));
+    cout << "Hello" << endl;
+    MyList<int> l;
+//    l.insert(15, 0);
+//    l.insert(15, 1);
+//    l.insert(15, 2);
     /*
     MyLinkedList<int> l1 = l.getNext();
     x = 32;

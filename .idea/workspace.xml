@@ -20,11 +20,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="41cd30c0-b2b8-4ff4-abfa-f75fb34af262" name="Changes" comment="Added lezione_14-12-23.cpp">
-      <change afterPath="$PROJECT_DIR$/Strutture/MyList/MyList.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Strutture/MyList/MyList.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+    <list default="true" id="41cd30c0-b2b8-4ff4-abfa-f75fb34af262" name="Changes" comment="Working on MyList Structure for exam">
+      <change beforePath="$PROJECT_DIR$/Strutture/MyList/MyList.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Strutture/MyList/MyList.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Strutture/MyList/MyList.h" beforeDir="false" afterPath="$PROJECT_DIR$/Strutture/MyList/MyList.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Strutture/TestStrutture.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Strutture/TestStrutture.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +156,7 @@
       <workItem from="1703595415698" duration="672000" />
       <workItem from="1703607733955" duration="1198000" />
       <workItem from="1703758209899" duration="599000" />
-      <workItem from="1703844704860" duration="2984000" />
+      <workItem from="1703844704860" duration="3584000" />
     </task>
     <task id="LOCAL-00001" summary="Done part 1 (needs changes)">
       <option name="closed" value="true" />
@@ -351,7 +350,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702543283212</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Working on MyList Structure for exam">
+      <option name="closed" value="true" />
+      <created>1703847722089</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1703847722089</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -383,7 +390,8 @@
     <MESSAGE value="Added testo.txt for Lab 7" />
     <MESSAGE value="Added struttura" />
     <MESSAGE value="Added lezione_14-12-23.cpp" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added lezione_14-12-23.cpp" />
+    <MESSAGE value="Working on MyList Structure for exam" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working on MyList Structure for exam" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

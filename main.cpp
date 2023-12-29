@@ -1,5 +1,5 @@
 #include "Algoritmi_Lab_5/test_liste.cpp"
-
+/*
 int main() {
     // Alg1
     //mainAlg1();
@@ -21,3 +21,4 @@ int main() {
 
     return 0;
 }
+*/

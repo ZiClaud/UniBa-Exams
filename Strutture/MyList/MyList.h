@@ -16,17 +16,19 @@ public:
 
     bool isEmpty() const;
 
-    bool isEnd(int) const;
+    bool isEnd(int pos) const;
 
-    int getNext(int) const;
+    int getNext(int pos) const;
 
-    int getPrevious(int) const;
+    int getPrevious(int pos) const;
 
-    T read(int) const;
+    T read(int pos) const;
 
-    void insert(T, int);
+    void write(T elem, int pos);
 
-    void remove(int);
+    void insert(T elem, int pos);
+
+    void remove(int pos);
 };
 
 
