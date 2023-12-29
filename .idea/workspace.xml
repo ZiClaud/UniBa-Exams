@@ -20,7 +20,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="41cd30c0-b2b8-4ff4-abfa-f75fb34af262" name="Changes" comment="Working on MyList Structure for exam">
+    <list default="true" id="41cd30c0-b2b8-4ff4-abfa-f75fb34af262" name="Changes" comment="Added print">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Strutture/MyList/MyList.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Strutture/MyList/MyList.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Strutture/MyList/MyList.h" beforeDir="false" afterPath="$PROJECT_DIR$/Strutture/MyList/MyList.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Strutture/TestStrutture.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Strutture/TestStrutture.cpp" afterDir="false" />
@@ -73,6 +74,8 @@
       <recent name="$PROJECT_DIR$/Algoritmi_Lab_3/v2" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Strutture/MyList" />
+      <recent name="$PROJECT_DIR$/Strutture" />
       <recent name="$PROJECT_DIR$/Strutture/LinkedList" />
       <recent name="$PROJECT_DIR$/Algoritmi_Lab_3/v1" />
     </key>
@@ -156,7 +159,7 @@
       <workItem from="1703595415698" duration="672000" />
       <workItem from="1703607733955" duration="1198000" />
       <workItem from="1703758209899" duration="599000" />
-      <workItem from="1703844704860" duration="3584000" />
+      <workItem from="1703844704860" duration="4863000" />
     </task>
     <task id="LOCAL-00001" summary="Done part 1 (needs changes)">
       <option name="closed" value="true" />
@@ -358,7 +361,31 @@
       <option name="project" value="LOCAL" />
       <updated>1703847722089</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Working on MyList Structure for exam">
+      <option name="closed" value="true" />
+      <created>1703848551757</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1703848551757</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Working on MyList Structure for exam">
+      <option name="closed" value="true" />
+      <created>1703848570492</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1703848570492</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Added print">
+      <option name="closed" value="true" />
+      <created>1703848746964</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1703848746964</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -391,7 +418,8 @@
     <MESSAGE value="Added struttura" />
     <MESSAGE value="Added lezione_14-12-23.cpp" />
     <MESSAGE value="Working on MyList Structure for exam" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working on MyList Structure for exam" />
+    <MESSAGE value="Added print" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added print" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

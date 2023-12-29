@@ -6,6 +6,8 @@ using namespace std;
 int main() {
     cout << "Hello" << endl;
     MyList<int> l;
+    l.print();
+//    l.write(1, 0);
 //    l.insert(15, 0);
 //    l.insert(15, 1);
 //    l.insert(15, 2);
