@@ -5,6 +5,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_executable(
         Algoritmi_Lab
-        Algoritmi_Lab_5/test_liste.cpp
-        Algoritmi_Lab_5/list_operations.cpp
+        Strutture/TestStrutture.cpp
+        Strutture/MyList/MyList.cpp
+        Strutture/MyList/MyList.h
 )
