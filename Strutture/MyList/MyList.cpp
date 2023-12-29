@@ -1,4 +1,7 @@
+#include <iostream>
 #include "MyList.h"
+
+using namespace std;
 
 template<class T>
 MyList<T>::MyList() = default;
@@ -104,4 +107,15 @@ void MyList<T>::cleanList() {
     if (modified) {
         cleanList();
     }
+}
+
+template<class T>
+void MyList<T>::print() {
+    cout << "[";
+    for (int i = 0; i < length; ++i) {
+        while (!isEnd(i)) {
+            cout << elements[i] << ", ";
+        }
+    }
+    cout << "]" << endl;
 }

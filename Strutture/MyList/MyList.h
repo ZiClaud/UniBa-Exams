@@ -6,9 +6,9 @@ class MyList {
 private:
     T elements[1024];
     int length = 1024;
-
     bool isPosValid(int pos);
     void cleanList();
+
 public:
     MyList();
 
@@ -29,6 +29,8 @@ public:
     void insert(T elem, int pos);
 
     void remove(int pos);
+
+    void print();
 };
 
 
