@@ -32,7 +32,7 @@ public:
 
     void write(T elem, int pos);
 
-    void insert(T elem, int pos) const;
+    void insert(T elem, int pos);
 
     void remove(int pos) const;
 
@@ -102,11 +102,23 @@ void MyList<T>::write(T elem, int pos) {
 }
 
 template<class T>
-void MyList<T>::insert(T elem, int pos) const {
+void MyList<T>::insert(T elem, int pos) {
+    MyList<T> tmp;
+    int j = 0;
     if (isPosValid(pos)) {
-        for (int i = 0; i < length; ++i) {
-            //TODO: Move everything to the right
+        tmp.write(elem, j);
+        j++;
+        for (int i = pos; i < length - 1; ++i) {
+            tmp.write(this->read(i), j);
+            j++;
         }
+
+        j = 0;
+        for (int i = pos; i < tmp.length; ++i) {
+            this->write(tmp.read(j), i);
+            j++;
+        }
+
         elements[pos] = elem;
         cleanList();
     }

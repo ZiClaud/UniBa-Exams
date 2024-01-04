@@ -13,8 +13,13 @@ int main() {
     l.write(5, 8);
     l.write(12, 23);
     l.print();
-    cout << l.read(2);
-//    l.insert(15, 0);
+    cout << l.read(2) << endl;
+    l.write(16, 1);
+    l.print();
+    l.insert(32, 1);
+    l.print();
+    l.insert(64, 0);
+    l.print();
 //    l.insert(15, 1);
 //    l.insert(15, 2);
     /*
