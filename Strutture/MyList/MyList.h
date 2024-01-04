@@ -158,7 +158,7 @@ void MyList<T>::print() const {
         cout << ", ";
         pos++;
     }
-    if (!isEnd(pos)) {
+    if (pos != 0 || !isEnd(pos)) {
         cout << elements[pos];
     }
     cout << "]" << endl;
