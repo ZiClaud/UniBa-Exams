@@ -20,12 +20,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="41cd30c0-b2b8-4ff4-abfa-f75fb34af262" name="Changes" comment="Added print">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Strutture/MyList/MyList.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Strutture/MyList/MyList.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Strutture/MyList/MyList.h" beforeDir="false" afterPath="$PROJECT_DIR$/Strutture/MyList/MyList.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Strutture/TestStrutture.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Strutture/TestStrutture.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="41cd30c0-b2b8-4ff4-abfa-f75fb34af262" name="Changes" comment="Still wroking on MyList" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -81,11 +76,6 @@
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.Algoritmi_Lab">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Algoritmi_Lab" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Algoritmi_Lab" TARGET_NAME="Algoritmi_Lab" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Algoritmi_Lab" RUN_TARGET_NAME="Algoritmi_Lab">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -159,7 +149,9 @@
       <workItem from="1703595415698" duration="672000" />
       <workItem from="1703607733955" duration="1198000" />
       <workItem from="1703758209899" duration="599000" />
-      <workItem from="1703844704860" duration="4863000" />
+      <workItem from="1703844704860" duration="5187000" />
+      <workItem from="1704044751985" duration="5000" />
+      <workItem from="1704360271288" duration="880000" />
     </task>
     <task id="LOCAL-00001" summary="Done part 1 (needs changes)">
       <option name="closed" value="true" />
@@ -385,7 +377,23 @@
       <option name="project" value="LOCAL" />
       <updated>1703848746964</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Still wroking on MyList">
+      <option name="closed" value="true" />
+      <created>1703849878469</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1703849878469</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Still wroking on MyList">
+      <option name="closed" value="true" />
+      <created>1704361701924</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1704361701924</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -419,7 +427,8 @@
     <MESSAGE value="Added lezione_14-12-23.cpp" />
     <MESSAGE value="Working on MyList Structure for exam" />
     <MESSAGE value="Added print" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added print" />
+    <MESSAGE value="Still wroking on MyList" />
+    <option name="LAST_COMMIT_MESSAGE" value="Still wroking on MyList" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

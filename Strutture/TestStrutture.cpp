@@ -7,7 +7,11 @@ int main() {
     cout << "Hello" << endl;
     MyList<int> l;
     l.print();
-//    l.write(1, 0);
+    l.write(1, 0);
+    l.write(2, 1);
+    l.write(3, 2);
+    l.write(4, 3);
+    l.print();
 //    l.insert(15, 0);
 //    l.insert(15, 1);
 //    l.insert(15, 2);

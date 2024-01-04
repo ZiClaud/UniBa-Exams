@@ -1,6 +1,10 @@
 #ifndef ALGORITMI_LAB_MYLIST_H
 #define ALGORITMI_LAB_MYLIST_H
 
+#include <iostream>
+
+using namespace std;
+
 template<class T>
 class MyList {
 private:
@@ -9,7 +13,7 @@ private:
 
     bool isPosValid(int pos) const;
 
-    void cleanList() const;
+    void cleanList();
 
 public:
     MyList();
@@ -26,7 +30,7 @@ public:
 
     T read(int pos) const;
 
-    void write(T elem, int pos) const;
+    void write(T elem, int pos);
 
     void insert(T elem, int pos) const;
 
@@ -34,9 +38,6 @@ public:
 
     void print() const;
 };
-
-
-using namespace std;
 
 template<class T>
 MyList<T>::MyList() {
@@ -93,7 +94,7 @@ T MyList<T>::read(int pos) const {
 }
 
 template<class T>
-void MyList<T>::write(T elem, int pos) const {
+void MyList<T>::write(T elem, int pos) {
     if (isPosValid(pos)) {
         elements[pos] = elem;
         cleanList();
@@ -129,7 +130,7 @@ bool MyList<T>::isPosValid(int pos) const {
 }
 
 template<class T>
-void MyList<T>::cleanList() const {
+void MyList<T>::cleanList() {
     bool modified = false;
     T prevElem;
     T currElem;
@@ -153,7 +154,12 @@ void MyList<T>::print() const {
     cout << "[";
     for (int i = 0; i < length; ++i) {
         if (!isEnd(i)) {
-            cout << elements[i] << ", ";
+            cout << elements[i];
+        } else {
+            break;
+        }
+        if (!isEnd(i + 1)) {
+            cout << ", ";
         }
     }
     cout << "]" << endl;
