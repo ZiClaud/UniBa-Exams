@@ -152,15 +152,14 @@ void MyList<T>::cleanList() {
 template<class T>
 void MyList<T>::print() const {
     cout << "[";
-    for (int i = 0; i < length; ++i) {
-        if (!isEnd(i)) {
-            cout << elements[i];
-        } else {
-            break;
-        }
-        if (!isEnd(i + 1)) {
-            cout << ", ";
-        }
+    int pos = 0;
+    while (this->getNext(pos) != -1) {
+        cout << elements[pos];
+        cout << ", ";
+        pos++;
+    }
+    if (!isEnd(pos)) {
+        cout << elements[pos];
     }
     cout << "]" << endl;
 }

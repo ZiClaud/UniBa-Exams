@@ -10,8 +10,10 @@ int main() {
     l.write(1, 0);
     l.write(2, 1);
     l.write(3, 2);
-    l.write(4, 3);
+    l.write(5, 8);
+    l.write(12, 23);
     l.print();
+    cout << l.read(2);
 //    l.insert(15, 0);
 //    l.insert(15, 1);
 //    l.insert(15, 2);
