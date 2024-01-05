@@ -24,18 +24,26 @@ public:
 
     ~MyList();
 
+    /// Returns true if empty
     bool isEmpty() const;
 
+    /// Checks if this is the end of the list
+    /// Doesn't check if the current position is not valid
     bool isEnd(int pos) const;
 
+    /// Reads value of position, -1 if void
     T read(int pos) const;
 
+    /// Overwrites position, if present
     void write(T elem, int pos);
 
+    /// Insert element in position, moves everything else to the right
     void insert(T elem, int pos);
 
+    /// Removes value of position
     void remove(int pos);
 
+    /// Prints list
     void print() const;
 };
 
