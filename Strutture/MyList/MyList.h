@@ -11,6 +11,10 @@ private:
     T elements[1024];
     int length = 1024;
 
+    int getNext(int pos) const;
+
+    int getPrevious(int pos) const;
+
     bool isPosValid(int pos) const;
 
     void cleanList();
@@ -24,17 +28,13 @@ public:
 
     bool isEnd(int pos) const;
 
-    int getNext(int pos) const;
-
-    int getPrevious(int pos) const;
-
     T read(int pos) const;
 
     void write(T elem, int pos);
 
     void insert(T elem, int pos);
 
-    void remove(int pos) const;
+    void remove(int pos);
 
     void print() const;
 };
@@ -61,9 +61,9 @@ bool MyList<T>::isEmpty() const {
 
 template<class T>
 bool MyList<T>::isEnd(int pos) const {
-//    if (!isPosValid(pos)) {
-//        throw;
-//    }
+    if (!isPosValid(pos)) {
+        throw;
+    }
     for (int i = pos; i < length; i++) {
         if (elements[i] != -1) {
             return false;
@@ -125,7 +125,7 @@ void MyList<T>::insert(T elem, int pos) {
 }
 
 template<class T>
-void MyList<T>::remove(int pos) const {
+void MyList<T>::remove(int pos) {
     if (isPosValid(pos)) {
         elements[pos] = -1;
         cleanList();

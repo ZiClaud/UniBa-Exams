@@ -7,6 +7,8 @@ int main() {
     cout << "Hello" << endl;
     MyList<int> l;
     l.print();
+    cout << "IsEnd(2):" << l.isEnd(2) << endl;
+    cout << "IsEmpty:" << l.isEmpty() << endl;
     l.write(1, 0);
     l.write(2, 1);
     l.write(3, 2);
@@ -20,15 +22,11 @@ int main() {
     l.print();
     l.insert(64, 0);
     l.print();
-//    l.insert(15, 1);
-//    l.insert(15, 2);
-    /*
-    MyLinkedList<int> l1 = l.getNext();
-    x = 32;
-    l1.addNext(MyLinkedList(x));
-
+    l.remove(0);
     l.print();
-     */
+    cout << "IsEnd(2):" << l.isEnd(2) << endl;
+    cout << "IsEnd(24):" << l.isEnd(24) << endl;
+    cout << "IsEmpty:" << l.isEmpty() << endl;
 
     return 0;
 }
