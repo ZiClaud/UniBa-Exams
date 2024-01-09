@@ -6,6 +6,6 @@ set(CMAKE_CXX_STANDARD 17)
 add_executable(
         Algoritmi_Lab
         Strutture/TestStrutture.cpp
-        Strutture/MyList/MyList.cpp
-        Strutture/MyList/MyList.h
+        Strutture/GeekLinkedList/GeekLinkedList.cpp
+        Strutture/GeekLinkedList/GeekLinkedList.h
 )
