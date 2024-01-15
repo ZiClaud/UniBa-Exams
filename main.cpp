@@ -6,5 +6,5 @@ int main() {
 }
 
 /*
- * TODO: LinkedList, ListVector, Stack (Pila), Queue, Dictionary, TreeBin, TreeN, PriorityQueue
+ * TODO: LinkedList, ListVector, Stack (Pila), Queue, Dictionary, TreeBin, TreeNary, PriorityQueue
  */
