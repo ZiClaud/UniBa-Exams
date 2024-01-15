@@ -140,7 +140,7 @@ void Linkedlist<T>::insertNode(int data) {
 // Function to print the
 // nodes of the linked list.
 template <class T>
-void Linkedlist<T>::printList() {
+void Linkedlist<T>::printList() { // TODO: Copiare vecchia print
     Node<T> *temp = head;
 
     // Check for empty list.
@@ -155,5 +155,9 @@ void Linkedlist<T>::printList() {
         temp = temp->next;
     }
 }
+
+//TODO: Overloading di =, ==, e !=
+
+//TODO: Also use what the prof wants
 
 #endif //ALGORITMI_LAB_GEEKLINKEDLIST_H

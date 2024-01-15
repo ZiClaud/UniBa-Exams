@@ -20,7 +20,13 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="41cd30c0-b2b8-4ff4-abfa-f75fb34af262" name="Changes" comment="Still wroking on MyList" />
+    <list default="true" id="41cd30c0-b2b8-4ff4-abfa-f75fb34af262" name="Changes" comment="Added lezione_11-01-24.cpp">
+      <change afterPath="$PROJECT_DIR$/Strutture/Queue/QueueV1.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Strutture/Queue/QueueV1.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Strutture/GeekLinkedList/GeekLinkedList.h" beforeDir="false" afterPath="$PROJECT_DIR$/Strutture/GeekLinkedList/GeekLinkedList.h" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,7 +59,7 @@
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/ziclaud/Desktop/Algoritmi_Lab/Esame&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/ziclaud/Desktop/Algoritmi_Lab/Lezioni&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -64,11 +70,13 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Esame" />
       <recent name="$PROJECT_DIR$/Lezioni" />
+      <recent name="$PROJECT_DIR$/Strutture" />
+      <recent name="$PROJECT_DIR$/Esame" />
       <recent name="$PROJECT_DIR$/Algoritmi_Lab_3/v2" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Strutture/GeekLinkedList" />
       <recent name="$PROJECT_DIR$/Strutture/MyList" />
       <recent name="$PROJECT_DIR$/Strutture" />
       <recent name="$PROJECT_DIR$/Strutture/LinkedList" />
@@ -76,9 +84,25 @@
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.Algoritmi_Lab">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Algoritmi_Lab" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Algoritmi_Lab" TARGET_NAME="Algoritmi_Lab" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Algoritmi_Lab" RUN_TARGET_NAME="Algoritmi_Lab">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Algoritmi_Lab" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Algoritmi_Lab" TARGET_NAME="Algoritmi_Lab" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Algoritmi_Lab" RUN_TARGET_NAME="Algoritmi_Lab">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestMatrice.cpp" type="CppFileRunConfiguration" factoryName="CppFileRunConfiguration" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Algoritmi_Lab" TARGET_NAME="TestMatrice.cpp" CONFIG_NAME="TestMatrice.cpp">
+      <option name="sourceFile" value="Algoritmi_Lab_3/v2/TestMatrice.cpp" />
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.runfile.CppFileBuildBeforeRunTaskProvider$BasicBuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="TestMatrice.cpp" type="CppFileRunConfiguration" factoryName="CppFileRunConfiguration" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Algoritmi_Lab" TARGET_NAME="TestMatrice.cpp" CONFIG_NAME="TestMatrice.cpp">
@@ -151,7 +175,15 @@
       <workItem from="1703758209899" duration="599000" />
       <workItem from="1703844704860" duration="5187000" />
       <workItem from="1704044751985" duration="5000" />
-      <workItem from="1704360271288" duration="880000" />
+      <workItem from="1704360271288" duration="3390000" />
+      <workItem from="1704385240216" duration="801000" />
+      <workItem from="1704468347223" duration="2548000" />
+      <workItem from="1704628618783" duration="1257000" />
+      <workItem from="1704789248393" duration="1378000" />
+      <workItem from="1704961205011" duration="812000" />
+      <workItem from="1704965755977" duration="19000" />
+      <workItem from="1704995286092" duration="99000" />
+      <workItem from="1705316871182" duration="1010000" />
     </task>
     <task id="LOCAL-00001" summary="Done part 1 (needs changes)">
       <option name="closed" value="true" />
@@ -393,7 +425,95 @@
       <option name="project" value="LOCAL" />
       <updated>1704361701924</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Still wroking on MyList">
+      <option name="closed" value="true" />
+      <created>1704362005804</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1704362005804</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Improved print">
+      <option name="closed" value="true" />
+      <created>1704362449503</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1704362449503</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Improved print">
+      <option name="closed" value="true" />
+      <created>1704362521365</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1704362521365</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Optimized print">
+      <option name="closed" value="true" />
+      <created>1704362666655</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1704362666655</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Working on insert">
+      <option name="closed" value="true" />
+      <created>1704364125508</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1704364125508</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Working on insert (should work)">
+      <option name="closed" value="true" />
+      <created>1704364370840</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1704364370840</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Working on MyList (should be done)">
+      <option name="closed" value="true" />
+      <created>1704476705620</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1704476705620</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Added documentation">
+      <option name="closed" value="true" />
+      <created>1704477054355</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1704477054355</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Working on MyListVector">
+      <option name="closed" value="true" />
+      <created>1704478207343</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1704478207343</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Stolen  code from Geeks to make a linked list, improved it to put every possible value/object">
+      <option name="closed" value="true" />
+      <created>1704790622673</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1704790622673</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Added lezione_11-01-24.cpp">
+      <option name="closed" value="true" />
+      <created>1704961780405</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1704961780406</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -406,12 +526,6 @@
     <isAutomaticFoundErrors value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Done part 1 (needs changes)" />
-    <MESSAGE value="Done lezione_09_11_23.cpp" />
-    <MESSAGE value="Minor bug fixes" />
-    <MESSAGE value="Added lezione_23_11_23.cpp - still in wip" />
-    <MESSAGE value="Started ASD Lab 6" />
-    <MESSAGE value="N/A" />
     <MESSAGE value="Added info esame" />
     <MESSAGE value="Added prova ex lab" />
     <MESSAGE value="Added prova 2 lab" />
@@ -428,7 +542,16 @@
     <MESSAGE value="Working on MyList Structure for exam" />
     <MESSAGE value="Added print" />
     <MESSAGE value="Still wroking on MyList" />
-    <option name="LAST_COMMIT_MESSAGE" value="Still wroking on MyList" />
+    <MESSAGE value="Improved print" />
+    <MESSAGE value="Optimized print" />
+    <MESSAGE value="Working on insert" />
+    <MESSAGE value="Working on insert (should work)" />
+    <MESSAGE value="Working on MyList (should be done)" />
+    <MESSAGE value="Added documentation" />
+    <MESSAGE value="Working on MyListVector" />
+    <MESSAGE value="Stolen  code from Geeks to make a linked list, improved it to put every possible value/object" />
+    <MESSAGE value="Added lezione_11-01-24.cpp" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added lezione_11-01-24.cpp" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

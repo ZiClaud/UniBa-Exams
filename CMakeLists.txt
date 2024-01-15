@@ -8,4 +8,6 @@ add_executable(
         Strutture/TestStrutture.cpp
         Strutture/GeekLinkedList/GeekLinkedList.cpp
         Strutture/GeekLinkedList/GeekLinkedList.h
+        Strutture/Queue/QueueV1.cpp
+        Strutture/Queue/QueueV1.h
 )
