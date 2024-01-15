@@ -15,39 +15,57 @@ public:
 
 template<class T>
 class LinkedList {
+private:
+    Node<T>* head;
+    Node<T>* tail;
 public:
+    // Constructor
     LinkedList();
 
+    // Destructor
     ~LinkedList();
 
+    // Check if the linked list is empty
     bool isEmpty();
 
+    // Read the element stored in a given node
     T readElem(Node<T> node);
 
-    // Overrides the value
+    // Override the value stored in a given node
     void writeElem(T elem, Node<T> node);
 
+    // Check if a given node is at the end of the list
     bool isEnd(Node<T> node);
 
+    // Get the starting node of the list
     Node<T> getStart();
 
+    // Get the ending node of the list
     Node<T> getEnd();
 
+    // Get the next node in the list after a given node
     Node<T> getNext(Node<T> node);
 
+    // Get the previous node in the list before a given node
     Node<T> getPrev(Node<T> node);
 
-    // Inserts the value
+    // Insert a new element after a given node
     void insert(T elem, Node<T> node);
 
+    // Remove a given node from the list
     void remove(Node<T> node);
 
-    // TODO: Operator =
+    // Copy assignment operator
+    LinkedList<T> &operator=(const LinkedList<T> &list);
 
-    bool operator==(const LinkedList<T> &) const;
+    // Equality operator
+    bool operator==(const LinkedList<T> &list) const;
 
-    // TODO: Operator !=
+    // Inequality operator
+    bool operator!=(const LinkedList<T> &list) const;
+
+    // Prints list
+    void print();
 };
-
 
 #endif //ASD_EXAM_STRUCTURES_LINKEDLIST_H
