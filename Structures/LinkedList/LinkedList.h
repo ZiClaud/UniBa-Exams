@@ -6,6 +6,14 @@
 #define ASD_EXAM_STRUCTURES_LINKEDLIST_H
 
 template<class T>
+class Node {
+public:
+    T data;
+    Node<T> *next;
+    Node<T> *prev;
+};
+
+template<class T>
 class LinkedList {
 public:
     LinkedList();
@@ -14,19 +22,25 @@ public:
 
     bool isEmpty();
 
-    T readElem(Node pos);
+    T readElem(Node<T> node);
 
-    void writeElem(T elem, Node pos);
+    // Overrides the value
+    void writeElem(T elem, Node<T> node);
 
-    bool isEnd(Node pos);
+    bool isEnd(Node<T> node);
 
-    Node getNext(Node pos);
+    Node<T> getStart();
 
-    Node getPrev(Node pos);
+    Node<T> getEnd();
 
-    void insert();
+    Node<T> getNext(Node<T> node);
 
-    void remove(Node pos);
+    Node<T> getPrev(Node<T> node);
+
+    // Inserts the value
+    void insert(T elem, Node<T> node);
+
+    void remove(Node<T> node);
 
     // TODO: Operator =
 
