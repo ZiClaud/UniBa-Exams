@@ -20,6 +20,7 @@ private:
     ListNode<T> *_pNext;
 };
 
+
 template<class T>
 class LinkedList : public LinearList<T, ListNode<T> *> {
 private:
@@ -44,6 +45,7 @@ public:
 
     value_type read(position) const;
 
+    // Write x at position p
     void write(const value_type &, position);
 
     position begin() const;
@@ -56,6 +58,7 @@ public:
 
     position previous(position) const;
 
+    // insert an element
     void insert(const value_type &, position);
 
     void erase(position);
@@ -69,12 +72,24 @@ public:
     bool operator==(const LinkedList<T> &) const; // tests two list for equality
 };
 
+
 template<class T>
 LinkedList<T>::LinkedList() {
     _pHead = new ListNode<T>;
     _pHead->_pNext = _pHead;
     _pHead->_pPrev = _pHead;
     _length = 0;
+}
+
+template<class T>
+LinkedList<T>::LinkedList(int n) {
+    _pHead = new ListNode<T>;
+    _pHead->_pNext = _pHead;
+    _pHead->_pPrev = _pHead;
+    _length = n;
+    for (int i = 0; i < n; i++) {
+        insert(T(), begin());
+    }
 }
 
 template<class T>
@@ -91,7 +106,6 @@ LinkedList<T>::LinkedList(const LinkedList<T> &L) {
         }
     }
 }
-
 
 template<class T>
 LinkedList<T>::~LinkedList() {
@@ -116,7 +130,6 @@ typename LinkedList<T>::position
 LinkedList<T>::last() const {
     return (_pHead->_pPrev);
 }
-
 
 template<class T>
 typename LinkedList<T>::position
@@ -144,8 +157,9 @@ LinkedList<T>::read(position p) const {
 
 template<class T>
 void LinkedList<T>::write(const value_type &a, position p) {
-    if (!end(p))
+    if (!end(p)) {
         p->_value = a;
+    }
 }
 
 template<class T>
@@ -171,16 +185,11 @@ void LinkedList<T>::erase(position p) {
     }
 }
 
-
 template<class T>
 LinkedList<T> &LinkedList<T>::operator=(const LinkedList<T> &L) {
     if (this != &L) {
-
         // deallocare tutta la lista this
-
         ~LinkedList();
-
-        //_length = L.size();
 
         _pHead = new ListNode<T>;
         _pHead->_pNext = _pHead;
@@ -199,7 +208,6 @@ LinkedList<T> &LinkedList<T>::operator=(const LinkedList<T> &L) {
     }
     return *this;
 }
-
 
 template<class T>
 bool LinkedList<T>::operator==(const LinkedList<T> &L) const {
