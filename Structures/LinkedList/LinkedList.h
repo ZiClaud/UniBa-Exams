@@ -5,12 +5,15 @@
 #ifndef ASD_EXAM_STRUCTURES_LINKEDLIST_H
 #define ASD_EXAM_STRUCTURES_LINKEDLIST_H
 
+#include <stdexcept>
+
+using namespace std;
+
 template<class T>
 class Node {
 public:
     T data;
     Node<T> *next;
-    Node<T> *prev;
 };
 
 template<class T>
@@ -38,10 +41,10 @@ public:
     bool isEnd(Node<T> node);
 
     // Get the starting node of the list
-    Node<T> getStart();
+    Node<T> getHead();
 
     // Get the ending node of the list
-    Node<T> getEnd();
+    Node<T> getTail();
 
     // Get the next node in the list after a given node
     Node<T> getNext(Node<T> node);
@@ -67,5 +70,61 @@ public:
     // Prints list
     void print();
 };
+
+template<class T>
+LinkedList<T>::LinkedList() {
+    head = new Node<T>();
+    tail = head;
+}
+
+template<class T>
+LinkedList<T>::~LinkedList() {
+    Node<T> *curr = head;
+    Node<T> *next;
+    while (tail != nullptr) {
+        next = head->next;
+        delete curr;
+        curr = next;
+    }
+}
+
+template<class T>
+bool LinkedList<T>::isEmpty() {
+    return (head->next == tail && head->data == nullptr); // TODO: Check if ok
+}
+
+template<class T>
+T LinkedList<T>::readElem(Node<T> node) {
+    return node.data;
+}
+
+template<class T>
+void LinkedList<T>::writeElem(T elem, Node<T> node) {
+    if (!this->contains(node)) {
+        throw invalid_argument("Node not in list");
+    }
+    node.data = elem;
+}
+
+template<class T>
+bool LinkedList<T>::isEnd(Node<T> node) {
+    return (node == getTail());
+}
+
+template<class T>
+Node<T> LinkedList<T>::getHead() {
+    return head;
+}
+
+template<class T>
+Node<T> LinkedList<T>::getTail() {
+    return tail;
+}
+
+template<class T>
+Node<T> LinkedList<T>::getNext(Node<T> node) {
+    return node.next;
+}
+
 
 #endif //ASD_EXAM_STRUCTURES_LINKEDLIST_H

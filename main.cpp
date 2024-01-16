@@ -1,7 +1,11 @@
 #include <iostream>
+#include "Structures/LinkedList/LinkedList.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    cout << "Hello, World!" << endl;
+
+//    LinkedList<int> l = new LinkedList();
+
     return 0;
 }
 
