@@ -41,10 +41,9 @@ public:
         virtual void pop_back(); // removes the last element
         virtual void clear(); // erases all the elements
     */
-
 };
 
-/* sovraccarica <<. Attenzione se il tipo restituito da read non Ã¨ primitivo, allora
+/* sovraccarica <<. Attenzione se il tipo restituito da read non e' primitivo, allora
  * anche per questo tipo bisogna sovraccaricare l'operatore <<
  */
 template<class T, class P>
@@ -53,21 +52,15 @@ ostream &operator<<(ostream &os, const LinearList<T, P> &l) {
     p = l.begin();
     os << "[";
     while (!l.end(p)) {
-        if (p != l.begin())
+        if (p != l.begin()) {
             os << ", " << l.read(p);
-        else
+        } else {
             os << l.read(p);
+        }
         p = l.next(p);
     }
     os << "]";
     return os;
 }
-
-/*
-template< class T, class P >
-int LinearList<T,P>::size() const{
-   ....
-}
-*/
 
 #endif //ASD_EXAM_STRUCTURES_LINEARLIST_H
