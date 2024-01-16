@@ -2,6 +2,7 @@
 #include "Structures/LinkedList/LinkedList.h"
 #include "Structures/ListVector/ListVector.h"
 #include "Structures/Stack/Stack.h"
+#include "Structures/Queue/Queue.h"
 
 int main() {
     cout << "Hello, World!" << endl;
@@ -47,7 +48,15 @@ int main() {
     s.removeLast();
     cout << s << endl;
 
-
+    cout << "q" << endl;
+    Queue<int> q = Queue<int>(100);
+    cout << q << endl;
+    q.insert(4);
+    q.insert(3);
+    cout << q << endl;
+    cout << q.read() << endl;
+    q.removeFirst();
+    cout << q << endl;
 
     return 0;
 }
