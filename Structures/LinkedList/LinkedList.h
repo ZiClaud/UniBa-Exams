@@ -64,8 +64,6 @@ public:
         return _length;
     };
 
-    void print() const;
-
     // sovraccarico di operatori
     LinkedList<T> &operator=(const LinkedList<T> &); // the assignment operator
     bool operator==(const LinkedList<T> &) const; // tests two list for equality
@@ -217,22 +215,6 @@ bool LinkedList<T>::operator==(const LinkedList<T> &L) const {
         pL = pL->_pNext;
     }
     return true;
-}
-
-template<class T>
-void LinkedList<T>::print() const {
-    cout << "[";
-    int pos = 0;
-    position p;
-    p = begin();
-    while (!end(p)) {
-        cout << p->_value;
-        if (p->_pNext != _pHead) {
-            cout << ", ";
-        }
-        p = p->_pNext;
-    }
-    cout << "]" << endl;
 }
 
 #endif //ASD_EXAM_STRUCTURES_LINKEDLIST_H

@@ -59,7 +59,7 @@ ostream &operator<<(ostream &os, const LinearList<T, P> &l) {
             os << l.read(p);
         p = l.next(p);
     }
-    os << "]" << endl;
+    os << "]";
     return os;
 }
 
