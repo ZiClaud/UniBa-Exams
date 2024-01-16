@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Structures/LinkedList/LinkedList.h"
 #include "Structures/ListVector/ListVector.h"
+#include "Structures/Stack/Stack.h"
 
 int main() {
     cout << "Hello, World!" << endl;
@@ -36,11 +37,21 @@ int main() {
     vl.write(2, vl.begin());
     cout << vl << endl;
 
+    cout << "s" << endl;
+    Stack<int> s = Stack<int>();
+    cout << s << endl;
+    s.insert(4);
+    s.insert(3);
+    cout << s << endl;
+    cout << s.read() << endl;
+    s.removeLast();
+    cout << s << endl;
+
 
 
     return 0;
 }
 
 /*
- * TODO: LinkedList, ListVector, Stack (Pila), Queue, Dictionary, TreeBin, TreeNary, PriorityQueue
+ * TODO: LinkedList, ListVector, Stack (Stack), Queue, Dictionary, TreeBin, TreeNary, PriorityQueue
  */

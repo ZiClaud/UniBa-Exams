@@ -8,9 +8,7 @@
 
 #include <iostream>
 
-using std::cout;
-using std::endl;
-using std::ostream;
+using namespace std;
 
 template<class T, class P>
 class LinearList {
