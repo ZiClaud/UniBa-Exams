@@ -19,4 +19,6 @@ add_executable(ASD_Exam_Structures main.cpp
         Structures/TreeNary/TreeNary.cpp
         Structures/TreeNary/TreeNary.h
         Structures/PriorityQueue/PriorityQueue.cpp
-        Structures/PriorityQueue/PriorityQueue.h)
+        Structures/PriorityQueue/PriorityQueue.h
+        Structures/LinkedList/LinearList.cpp
+        Structures/LinkedList/LinearList.h)

@@ -5,126 +5,234 @@
 #ifndef ASD_EXAM_STRUCTURES_LINKEDLIST_H
 #define ASD_EXAM_STRUCTURES_LINKEDLIST_H
 
-#include <stdexcept>
-
-using namespace std;
+#include "LinearList.h"
 
 template<class T>
-class Node {
-public:
-    T data;
-    Node<T> *next;
+class LinkedList;
+
+template<class T>
+class ListNode {
+    friend class LinkedList<T>;
+
+private:
+    T _value;
+    ListNode<T> *_pPrev;
+    ListNode<T> *_pNext;
 };
 
 template<class T>
-class LinkedList {
+class LinkedList : public LinearList<T, ListNode<T> *> {
 private:
-    Node<T>* head;
-    Node<T>* tail;
+    ListNode<T> *_pHead;
+    int _length = 0; // the length of the list
 public:
-    // Constructor
+    typedef typename LinearList<T, ListNode<T> *>::value_type value_type;
+    typedef typename LinearList<T, ListNode<T> *>::position position;
+
+    // costruttori
     LinkedList();
 
-    // Destructor
+    LinkedList(int);
+
+    // costruttore per copia
+    LinkedList(const LinkedList<T> &);
+
+    //distruttore
     ~LinkedList();
 
-    // Check if the linked list is empty
-    bool isEmpty();
+    bool empty() const;
 
-    // Read the element stored in a given node
-    T readElem(Node<T> node);
+    value_type read(position) const;
 
-    // Override the value stored in a given node
-    void writeElem(T elem, Node<T> node);
+    void write(const value_type &, position);
 
-    // Check if a given node is at the end of the list
-    bool isEnd(Node<T> node);
+    position begin() const;
 
-    // Get the starting node of the list
-    Node<T> getHead();
+    position last() const;
 
-    // Get the ending node of the list
-    Node<T> getTail();
+    bool end(position) const;
 
-    // Get the next node in the list after a given node
-    Node<T> getNext(Node<T> node);
+    position next(position) const;
 
-    // Get the previous node in the list before a given node
-    Node<T> getPrev(Node<T> node);
+    position previous(position) const;
 
-    // Insert a new element after a given node
-    void insert(T elem, Node<T> node);
+    void insert(const value_type &, position);
 
-    // Remove a given node from the list
-    void remove(Node<T> node);
+    void erase(position);
 
-    // Copy assignment operator
-    LinkedList<T> &operator=(const LinkedList<T> &list);
+    int size() const {
+        return _length;
+    };
 
-    // Equality operator
-    bool operator==(const LinkedList<T> &list) const;
+    void print() const;
 
-    // Inequality operator
-    bool operator!=(const LinkedList<T> &list) const;
-
-    // Prints list
-    void print();
+    // sovraccarico di operatori
+    LinkedList<T> &operator=(const LinkedList<T> &); // the assignment operator
+    bool operator==(const LinkedList<T> &) const; // tests two list for equality
 };
 
 template<class T>
 LinkedList<T>::LinkedList() {
-    head = new Node<T>();
-    tail = head;
+    _pHead = new ListNode<T>;
+    _pHead->_pNext = _pHead;
+    _pHead->_pPrev = _pHead;
+    _length = 0;
 }
+
+template<class T>
+LinkedList<T>::LinkedList(const LinkedList<T> &L) {
+    _pHead = new ListNode<T>;
+    _pHead->_pNext = _pHead;
+    _pHead->_pPrev = _pHead;
+
+    if (!L.empty()) {
+        position p = L.last();
+        for (int i = 0; i <= L._length; i++) {
+            insert(L.read(p), begin());
+            p = L.previous(p);
+        }
+    }
+}
+
 
 template<class T>
 LinkedList<T>::~LinkedList() {
-    Node<T> *curr = head;
-    Node<T> *next;
-    while (tail != nullptr) {
-        next = head->next;
-        delete curr;
-        curr = next;
+    while (!empty())
+        erase(begin());
+    delete _pHead;
+}
+
+template<class T>
+bool LinkedList<T>::empty() const {
+    return (_pHead == _pHead->_pNext);
+}
+
+template<class T>
+typename LinkedList<T>::position
+LinkedList<T>::begin() const {
+    return (_pHead->_pNext);
+}
+
+template<class T>
+typename LinkedList<T>::position
+LinkedList<T>::last() const {
+    return (_pHead->_pPrev);
+}
+
+
+template<class T>
+typename LinkedList<T>::position
+LinkedList<T>::next(position p) const {
+    return (p->_pNext);
+}
+
+template<class T>
+typename LinkedList<T>::position LinkedList<T>::previous(position p) const {
+    if (p != _pHead)
+        return (p->_pPrev);
+}
+
+template<class T>
+bool LinkedList<T>::end(position p) const {
+    return (p == _pHead);
+}
+
+template<class T>
+typename LinkedList<T>::value_type
+LinkedList<T>::read(position p) const {
+    if (!end(p))
+        return (p->_value);
+}
+
+template<class T>
+void LinkedList<T>::write(const value_type &a, position p) {
+    if (!end(p))
+        p->_value = a;
+}
+
+template<class T>
+void LinkedList<T>::insert(const value_type &a, position p) {
+    position t = new ListNode<T>;
+    t->_value = a;
+
+    t->_pNext = p;
+    t->_pPrev = p->_pPrev;
+    p->_pPrev->_pNext = t;
+    p->_pPrev = t;
+
+    _length++;
+}
+
+template<class T>
+void LinkedList<T>::erase(position p) {
+    if (!empty() && !end(p)) {
+        p->_pPrev->_pNext = p->_pNext;
+        p->_pNext->_pPrev = p->_pPrev;
+        delete p;
+        _length--;
     }
 }
 
-template<class T>
-bool LinkedList<T>::isEmpty() {
-    return (head->next == tail && head->data == nullptr); // TODO: Check if ok
-}
 
 template<class T>
-T LinkedList<T>::readElem(Node<T> node) {
-    return node.data;
-}
+LinkedList<T> &LinkedList<T>::operator=(const LinkedList<T> &L) {
+    if (this != &L) {
 
-template<class T>
-void LinkedList<T>::writeElem(T elem, Node<T> node) {
-    if (!this->contains(node)) {
-        throw invalid_argument("Node not in list");
+        // deallocare tutta la lista this
+
+        ~LinkedList();
+
+        //_length = L.size();
+
+        _pHead = new ListNode<T>;
+        _pHead->_pNext = _pHead;
+        _pHead->_pPrev = _pHead;
+
+        cout << L.empty();
+        cout << L.size();
+        if (!L.empty()) {
+            position p = L.last();
+            for (int i = 0; i < L.size(); i++) {
+                cout << i, L.read(p);
+                insert(L.read(p), begin());
+                p = L.previous(p);
+            }
+        }
     }
-    node.data = elem;
+    return *this;
+}
+
+
+template<class T>
+bool LinkedList<T>::operator==(const LinkedList<T> &L) const {
+    if (L.size() != _length)
+        return false;
+    position p, pL;
+    p = begin();
+    pL = L.begin();
+    while (!end(p)) {
+        if (p->_value != pL->_value)
+            return false;
+        p = p->_pNext;
+        pL = pL->_pNext;
+    }
+    return true;
 }
 
 template<class T>
-bool LinkedList<T>::isEnd(Node<T> node) {
-    return (node == getTail());
+void LinkedList<T>::print() const {
+    cout << "[";
+    int pos = 0;
+    position p;
+    p = begin();
+    while (!end(p)) {
+        cout << p->_value;
+        if (p->_pNext != _pHead) {
+            cout << ", ";
+        }
+        p = p->_pNext;
+    }
+    cout << "]" << endl;
 }
-
-template<class T>
-Node<T> LinkedList<T>::getHead() {
-    return head;
-}
-
-template<class T>
-Node<T> LinkedList<T>::getTail() {
-    return tail;
-}
-
-template<class T>
-Node<T> LinkedList<T>::getNext(Node<T> node) {
-    return node.next;
-}
-
 
 #endif //ASD_EXAM_STRUCTURES_LINKEDLIST_H
