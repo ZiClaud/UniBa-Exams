@@ -77,6 +77,18 @@ int main() {
     cout << d << endl;
     cout << *d.find(p0.key) << endl;
 
+    HashTable<int, int> d1 = HashTable<int, int>(5);
+    MyPair<int, int> p2 = MyPair<int, int>(1, 1);
+    MyPair<int, int> p3 = MyPair<int, int>(2, 2);
+    MyPair<int, int> p4 = MyPair<int, int>(2, 3);
+    cout << d1 << endl;
+    d1.insert(p2);
+    d1.insert(p3);
+    d1.insert(p4);
+    cout << d1 << endl;
+    cout << *d1.find(p2.key) << endl;
+    cout << *d1.find(2) << endl;
+
     cout << "Binary Tree:" << endl;
 
 

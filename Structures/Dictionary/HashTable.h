@@ -75,8 +75,9 @@ HashTable<K, E>::HashTable(int the_divisor) {
     dsize = 0;
 
     table = new MyPair<K, E> *[divisor];
-    for (int i = 0; i < divisor; i++)
+    for (int i = 0; i < divisor; i++) {
         table[i] = NULL;
+    }
 }
 
 /* This method returns a bucket b in the table that satisfies exactly one of the following:
@@ -91,8 +92,9 @@ int HashTable<K, E>::search(const K &the_key) const {
     int i = (int) hashm(the_key) % divisor;   // the home bucket
     int j = i;
     do {
-        if (table[j] == NULL || table[j]->key == the_key)
+        if (table[j] == NULL || table[j]->key == the_key) {
             return j;
+        }
         j = (j + 1) % divisor;                    // the next bucket
     } while (j != i);
 
@@ -106,8 +108,10 @@ MyPair<K, E> *HashTable<K, E>::find(const K &the_key) const {
     // search the table
     int b = search(the_key);
     // see if a match was found at table[b]
-    if (table[b] == NULL || table[b]->key != the_key)
+    if (table[b] == NULL || table[b]->key != the_key) {
+        cout << "No match found" << endl;
         return NULL;    // no match
+    }
     return table[b];  // matching pair
 }
 
@@ -131,10 +135,10 @@ void HashTable<K, E>::insert(MyPair<K, E> &the_pair) {
         dsize++;
     } else {
         // check id duplicate or table full
-        if (table[b]->key == the_pair.key)
-            // duplicate, change table[b]->element
+        if (table[b]->key == the_pair.key) {
+            cout << "Duplicate, changed element of the key" << endl;
             table[b]->element = the_pair.element;
-        else {
+        } else {
             throw invalid_argument("Hash table is full");
         }
     }
