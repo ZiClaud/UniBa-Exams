@@ -61,26 +61,21 @@ int main() {
     cout << q << endl;
 
     cout << "Dictionary:" << endl;
-//    HashTable<int, int> d = HashTable<int, int>(5);
-/*
+    HashTable<char, int> d = HashTable<char, int>(5);
 
     MyPair<char, int> p0;
     p0.key = 'a';
     p0.element = 1;
-    cout << p0.key << endl;
-    cout << p0.element << endl;
+    cout << "Key: " << p0.key << ", Element:" << p0.element << endl;
 
     MyPair<char, int> p1 = MyPair<char, int>('b', 2);
-    cout << p1.key << endl;
-    cout << p1.element << endl;
+    cout << "Key: " << p1.key << ", Element:" << p1.element << endl;
 
-//    cout << d.size() << endl;
-//    d.insert(p0);
-//    d.insert(p1);
-//    cout << d.size() << endl;
-//    cout << d. << endl;
-//    cout << d. << endl;
-*/
+    cout << d << endl;
+    d.insert(p0);
+    d.insert(p1);
+    cout << d << endl;
+    cout << *d.find(p0.key) << endl;
 
     cout << "Binary Tree:" << endl;
 

@@ -15,7 +15,9 @@ using std::string;
 template<class T>
 class Hash {
 public:
-    size_t operator()(const T the_key) const;
+    size_t operator()(const T the_key) const {
+        return static_cast<size_t>(the_key);
+    }
 };
 
 

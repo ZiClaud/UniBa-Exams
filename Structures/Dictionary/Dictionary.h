@@ -29,6 +29,14 @@ struct MyPair {
     }
 };
 
+template<class K, class E>
+ostream &operator<<(ostream &os, MyPair<K, E> &p) {
+    os << "[";
+    os << "Key: " << p.key << ", " << "Element: " << p.element;
+    os << "]";
+    return os;
+}
+
 
 template<class K, class E>
 class Dictionary {
