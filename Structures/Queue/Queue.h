@@ -28,6 +28,8 @@ public:
     T read() {
         if (!isEmpty()) {
             return (elements[testa]);
+        } else {
+            throw out_of_range("Queue is empty");
         }
     }
 
@@ -35,6 +37,8 @@ public:
         if (!isEmpty()) {
             testa = (testa + 1) % maxLenght;
             lung--;
+        } else {
+            throw out_of_range("Queue is empty");
         }
     }
 
@@ -42,6 +46,8 @@ public:
         if (lung != maxLenght) {
             elements[(testa + lung) % maxLenght] = a;
             lung++;
+        } else {
+            throw out_of_range("Queue is full");
         }
     }
 

@@ -52,7 +52,7 @@ Stack<T>::~Stack() {
 
 template<class T>
 bool Stack<T>::isEmpty() const {
-    return head == 0;
+    return (head == 0);
 }
 
 template<class T>

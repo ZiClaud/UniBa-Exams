@@ -108,38 +108,47 @@ typename ListVector<T>::position ListVector<T>::begin() const {
 
 template<class T>
 typename ListVector<T>::position ListVector<T>::next(position p) const {
-    if ((0 < p) && (p < length_ + 1)) // precondizione
+    if ((0 < p) && (p < length_ + 1)) { // precondizione
         return (p + 1);
-    else
+    } else {
         return (p);
+    }
 }
 
 template<class T>
 typename ListVector<T>::position ListVector<T>::previous(position p) const {
-    if ((1 < p) && (p < length_ + 1)) // precondizione
+    if ((1 < p) && (p < length_ + 1)) { // precondizione
         return (p - 1);
-    else
+    } else {
         return (p);
+    }
 }
 
 template<class T>
 bool ListVector<T>::end(position p) const {
-    if ((0 < p) && (p <= length_ + 1)) // precondizione
+    if ((0 < p) && (p <= length_ + 1)) { // precondizione
         return (p == length_ + 1);
-    else
+    } else {
         return (false);
+    }
 }
 
 template<class T>
 typename ListVector<T>::value_type ListVector<T>::read(position p) const {
-    if ((0 < p) && (p < length_ + 1)) // precondizione
+    if ((0 < p) && (p < length_ + 1)) { // precondizione
         return (elements_[p - 1]);
+    } else {
+        throw invalid_argument("No element to read in position");
+    }
 }
 
 template<class T>
 void ListVector<T>::write(const value_type &a, position p) {
-    if ((0 < p) && (p < length_ + 1)) // precondizione
+    if ((0 < p) && (p < length_ + 1)) { // precondizione
         elements_[p - 1] = a;
+    } else {
+        throw invalid_argument("No element to write in position");
+    }
 }
 
 template<class T>
@@ -149,8 +158,9 @@ void ListVector<T>::insert(const value_type &a, position p) {
         array_dimension_ = array_dimension_ * 2;
     }
     if ((0 < p) && (p <= length_ + 1)) { // precondizione
-        for (int i = length_; i >= p; i--)
+        for (int i = length_; i >= p; i--) {
             elements_[i] = elements_[i - 1];
+        }
         elements_[p - 1] = a;
         length_++;
     }
@@ -158,25 +168,28 @@ void ListVector<T>::insert(const value_type &a, position p) {
 
 template<class T>
 void ListVector<T>::erase(position p) {
-    if ((0 < p) && (p < length_ + 1)) // precondizione
+    if ((0 < p) && (p < length_ + 1)) { // precondizione
         if (!empty()) {
-            for (int i = p - 1; i < (length_ - 1); i++)
+            for (int i = p - 1; i < (length_ - 1); i++) {
                 elements_[i] = elements_[i + 1];
+            }
             length_--;
         }
+    }
 }
 
 template<class T>
 void ListVector<T>::change_dimension_(T *&a, int vecchiaDim, int nuovaDim) {
-
     T *temp = new T[nuovaDim];
     int number;
-    if (vecchiaDim < nuovaDim)
+    if (vecchiaDim < nuovaDim) {
         number = vecchiaDim;
-    else
+    } else {
         number = nuovaDim;
-    for (int i = 0; i < number; i++)
+    }
+    for (int i = 0; i < number; i++) {
         temp[i] = a[i];
+    }
     delete[] a;
     a = temp;
 }
@@ -189,8 +202,9 @@ ListVector<T> &ListVector<T>::operator=(const ListVector<T> &l) {
         this->length_ = l.length_;
         delete this->elements_;
         this->elements_ = new T[array_dimension_];
-        for (int i = 0; i < l.array_dimension_; i++)
+        for (int i = 0; i < l.array_dimension_; i++) {
             this->elements_[i] = l.elements_[i];
+        }
     }
     return *this;
 }
@@ -198,11 +212,14 @@ ListVector<T> &ListVector<T>::operator=(const ListVector<T> &l) {
 /* operatore di test di uguaglianza */
 template<class T>
 bool ListVector<T>::operator==(const ListVector<T> &l) const {
-    if (l.length_ != this->length_)
+    if (l.length_ != this->length_) {
         return false;
-    for (int i = 0; i < this->array_dimension_; i++)
-        if (this->elements_[i] != l.elements_[i])
+    }
+    for (int i = 0; i < this->array_dimension_; i++) {
+        if (this->elements_[i] != l.elements_[i]) {
             return false;
+        }
+    }
     return true;
 }
 

@@ -139,8 +139,10 @@ LinkedList<T>::next(position p) const {
 
 template<class T>
 typename LinkedList<T>::position LinkedList<T>::previous(position p) const {
-    if (p != _pHead)
+    if (p != _pHead) {
         return (p->_pPrev);
+    }
+    throw invalid_argument("No previous element");
 }
 
 template<class T>
@@ -151,8 +153,10 @@ bool LinkedList<T>::end(position p) const {
 template<class T>
 typename LinkedList<T>::value_type
 LinkedList<T>::read(position p) const {
-    if (!end(p))
+    if (!end(p)) {
         return (p->_value);
+    }
+    throw invalid_argument("No element");
 }
 
 template<class T>
