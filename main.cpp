@@ -3,8 +3,8 @@
 #include "Structures/ListVector/ListVector.h"
 #include "Structures/Stack/Stack.h"
 #include "Structures/Queue/Queue.h"
-//#include "Structures/Dictionary/Dictionary.h"
-//#include "Structures/Dictionary/HashTable.h"
+#include "Structures/Dictionary/Dictionary.h"
+#include "Structures/Dictionary/HashTable.h"
 
 int main() {
     cout << "Hello, World!" << endl;
@@ -61,18 +61,18 @@ int main() {
     cout << q << endl;
 
     cout << "Dictionary:" << endl;
-//    HashTable<char, int> d = HashTable<char, int>(5);
+//    HashTable<int, int> d = HashTable<int, int>(5);
 /*
 
     MyPair<char, int> p0;
-    p0.first = 'a';
-    p0.second = 1;
-    cout << p0.first << endl;
-    cout << p0.second << endl;
+    p0.key = 'a';
+    p0.element = 1;
+    cout << p0.key << endl;
+    cout << p0.element << endl;
 
     MyPair<char, int> p1 = MyPair<char, int>('b', 2);
-    cout << p1.first << endl;
-    cout << p1.second << endl;
+    cout << p1.key << endl;
+    cout << p1.element << endl;
 
 //    cout << d.size() << endl;
 //    d.insert(p0);

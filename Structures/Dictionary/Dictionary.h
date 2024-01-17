@@ -5,25 +5,27 @@
 #ifndef ASD_EXAM_STRUCTURES_DICTIONARY_H
 #define ASD_EXAM_STRUCTURES_DICTIONARY_H
 
+#include <iostream>
+
 using namespace std;
 
 template<class K, class E>
 struct MyPair {
     // data member
-    K first;
-    E second;
+    K key;
+    E element;
 
     // methods
     MyPair() {}
 
-    MyPair(K first, E second) {
-        first = first;
-        second = second;
+    MyPair(K k, E e) {
+        key = k;
+        element = e;
     }
 
     MyPair(MyPair<K, E> &the_pair) {
-        first = the_pair.first;
-        second = the_pair.second;
+        key = the_pair.key;
+        element = the_pair.element;
     }
 };
 
@@ -52,5 +54,14 @@ public:
     virtual void modify(const K &k, const E &e) = 0;
     // modify the value of the pair with key k to e
 };
+
+
+template<class K, class E>
+ostream &operator<<(ostream &os, Dictionary<K, E> &d) {
+    os << "[";
+    os << "Dictionary size: " << d.size();
+    os << "]";
+    return os;
+}
 
 #endif //ASD_EXAM_STRUCTURES_DICTIONARY_H

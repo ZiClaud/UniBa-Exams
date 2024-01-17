@@ -89,7 +89,7 @@ int HashTable<K, E>::search(const K &the_key) const {
     int i = (int) hashm(the_key) % divisor;   // the home bucket
     int j = i;
     do {
-        if (table[j] == NULL || table[j]->first == the_key)
+        if (table[j] == NULL || table[j]->key == the_key)
             return j;
         j = (j + 1) % divisor;                    // the next bucket
     } while (j != i);
@@ -104,7 +104,7 @@ MyPair<K, E> *HashTable<K, E>::find(const K &the_key) const {
     // search the table
     int b = search(the_key);
     // see if a match was found at table[b]
-    if (table[b] == NULL || table[b]->first != the_key)
+    if (table[b] == NULL || table[b]->key != the_key)
         return NULL;    // no match
     return table[b];  // matching pair
 }
@@ -112,16 +112,16 @@ MyPair<K, E> *HashTable<K, E>::find(const K &the_key) const {
 /* = INSERTING =
  *
  * It begins by invoking the method search. If the returned bucket b is empty, then there is no
- * pair in the table with key the_pair.first and the pair the_pair may be inserted into this
- * bucket. If the returned bucket is not empty, then it either contains a pair with key the_pair.first
- * or the table is full. In the former case we change the second component of the pair stored
- * in the bucket to the_pair.second; in the latter, we throw an exception
+ * pair in the table with key the_pair.key and the pair the_pair may be inserted into this
+ * bucket. If the returned bucket is not empty, then it either contains a pair with key the_pair.key
+ * or the table is full. In the former case we change the element component of the pair stored
+ * in the bucket to the_pair.element; in the latter, we throw an exception
  */
 
 template<class K, class E>
 void HashTable<K, E>::insert(MyPair<K, E> &the_pair) {
     // search the table for a matching element
-    int b = search(the_pair.first);
+    int b = search(the_pair.key);
     // chack if matching element found
     if (table[b] == NULL) {
         // no matching element and table not full
@@ -129,9 +129,9 @@ void HashTable<K, E>::insert(MyPair<K, E> &the_pair) {
         dsize++;
     } else {
         // check id duplicate or table full
-        if (table[b]->first == the_pair.first)
-            // duplicate, change table[b]->second
-            table[b]->second = the_pair.second;
+        if (table[b]->key == the_pair.key)
+            // duplicate, change table[b]->element
+            table[b]->element = the_pair.element;
         else {
             throw invalid_argument("Hash table is full");
         }
