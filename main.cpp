@@ -5,6 +5,7 @@
 #include "Structures/Queue/Queue.h"
 #include "Structures/Dictionary/Dictionary.h"
 #include "Structures/Dictionary/HashTable.h"
+#include "Structures/TreeBin/TreeBin.h"
 
 int main() {
     cout << "Hello, World!" << endl;
@@ -90,7 +91,7 @@ int main() {
     cout << *d1.find(2) << endl;
 
     cout << "Binary Tree:" << endl;
-
+    TreeBin<int> bt = TreeBin<int>();
 
     cout << "N-Ary Tree:" << endl;
 

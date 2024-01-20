@@ -22,4 +22,5 @@ add_executable(ASD_Exam_Structures main.cpp
         Structures/PriorityQueue/PriorityQueue.h
         Structures/LinkedList/LinearList.cpp
         Structures/LinkedList/LinearList.h
-        Structures/Dictionary/HashTable.h)
+        Structures/Dictionary/HashTable.h
+)

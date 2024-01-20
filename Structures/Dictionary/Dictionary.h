@@ -43,7 +43,7 @@ class Dictionary {
 public:
     virtual ~Dictionary() {}
 
-    // create an empty Dictionary
+    // _create an empty Dictionary
     virtual bool empty() const = 0;
 
     // return true iff the Dictionary is empty
