@@ -92,6 +92,10 @@ int main() {
 
     cout << "Binary Tree:" << endl;
     TreeBin<int> bt = TreeBin<int>();
+    cout << bt << endl;
+    bt.write(1, bt.root());
+    bt.ins_sx(2);
+    cout << bt.sx(bt.root()) << endl;
 
     cout << "N-Ary Tree:" << endl;
 

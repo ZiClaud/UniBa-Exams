@@ -31,7 +31,7 @@ struct EmptyTree : public std::domain_error {
 
 struct NodeExists : public std::domain_error {
     NodeExists() : domain_error(
-            "Nodo giÃ  presente.") {};
+            "Node giÃ  presente.") {};
 };
 
 /// @brief Interfaccia per un albero binario
@@ -40,54 +40,54 @@ class _TreeBin {
     static const int NIL = -1;
 public:
     // tipi
-    typedef T value_type;
-    typedef N Nodo;
+    typedef T value;
+    typedef N Node;
 
     // operatori
 
-    virtual void create() = 0;
+    virtual void _create() = 0;
 
     virtual bool empty() const = 0;
 
-    virtual Nodo root() const = 0;
+    virtual Node root() const = 0;
 
-    virtual Nodo parent(Nodo) const = 0;
+    virtual Node parent(Node) const = 0;
 
-    virtual Nodo sx(Nodo) const = 0;
+    virtual Node sx(Node) const = 0;
 
-    virtual Nodo dx(Nodo) const = 0;
+    virtual Node dx(Node) const = 0;
 
-    virtual bool sx_empty(Nodo) const = 0;
+    virtual bool sx_empty(Node) const = 0;
 
-    virtual bool dx_empty(Nodo) const = 0;
+    virtual bool dx_empty(Node) const = 0;
 
     //virtual void costr(_TreeBin<T,N>);
 
-    virtual void erase(Nodo) = 0;
+    virtual void erase(Node) = 0;
 
-    virtual T read(Nodo) const = 0;
+    virtual T read(Node) const = 0;
 
-    virtual void write(Nodo, value_type) = 0;
+    virtual void write(Node, value) = 0;
 
-    virtual void ins_root(Nodo) = 0;
+    virtual void ins_root(Node) = 0;
 
-    virtual void ins_sx(Nodo) = 0;
+    virtual void ins_sx(Node) = 0;
 
-    virtual void ins_dx(Nodo) = 0;
+    virtual void ins_dx(Node) = 0;
 
     // funzioni di servizio da implementare qui
 
-    //virtual void previsit(Nodo);
+    //virtual void previsit(Node);
 
-    //virtual void invisita(Nodo);
+    //virtual void invisita(Node);
 
-    //virtual void postvisit(Nodo);
+    //virtual void postvisit(Node);
 
 
     virtual void print() const;
 
 private:
-    virtual void printSubTree(const Nodo) const;
+    virtual void printSubTree(const Node) const;
 };
 
 template<class T, class N>
@@ -101,7 +101,7 @@ void _TreeBin<T, N>::print() const {
 }
 
 template<class T, class N>
-void _TreeBin<T, N>::printSubTree(const Nodo n) const {
+void _TreeBin<T, N>::printSubTree(const Node n) const {
     std::cout << "[" << n << ", ";
     if (!sx_empty(n)) {
         printSubTree(sx(n));
@@ -131,14 +131,14 @@ class TreeBin : public _TreeBin<T, int> {
 
 public:
 
-    typedef typename _TreeBin<T, int>::value_type value_type;
-    typedef typename _TreeBin<T, int>::Nodo Nodo;
+    typedef typename _TreeBin<T, int>::value value;
+    typedef typename _TreeBin<T, int>::Node Nodo;
 
     struct _cella {
         Nodo genitore;
         Nodo sinistro;
         Nodo destro;
-        value_type valore;
+        value valore;
     };
 
     typedef struct _cella Cella;
@@ -153,7 +153,7 @@ public:
 
     // operatori
 
-    void create();
+    void _create();
 
     bool empty() const;
 
@@ -175,7 +175,7 @@ public:
 
     T read(Nodo) const;
 
-    void write(Nodo, value_type);
+    void write(Nodo, value);
 
     void ins_root(Nodo);
 
@@ -195,13 +195,13 @@ template<class T>
 TreeBin<T>::TreeBin() {
     MAXLUNG = 100;
     spazio = new Cella[MAXLUNG];
-    create();
+    _create();
 }
 
 template<class T>
 TreeBin<T>::TreeBin(int nNodi): MAXLUNG(nNodi) {
     spazio = new Cella[nNodi];
-    create();
+    _create();
 }
 
 
@@ -212,7 +212,7 @@ TreeBin<T>::~TreeBin() {
 }
 
 template<class T>
-void TreeBin<T>::create() {
+void TreeBin<T>::_create() {
     inizio = NIL;
     for (int i = 0; i < MAXLUNG; i++) {
         spazio[i].sinistro = (i + 1) % MAXLUNG;
@@ -364,7 +364,7 @@ T TreeBin<T>::read(Nodo n) const {
 }
 
 template<class T>
-void TreeBin<T>::write(Nodo n, value_type a) {
+void TreeBin<T>::write(Nodo n, value a) {
     if (n != NIL) {
         spazio[n].valore = a;
     } else {

@@ -11,7 +11,7 @@
 template<class T>
 class ListVector : public LinearList<T, int> {
 public:
-    typedef typename LinearList<T, int>::value_type value_type;
+    typedef typename LinearList<T, int>::value value;
     typedef typename LinearList<T, int>::position position;
 
     // costruttori
@@ -28,9 +28,9 @@ public:
     // operatori
     bool empty() const;
 
-    value_type read(position) const;
+    value read(position) const;
 
-    void write(const value_type &, position);
+    void write(const value &, position);
 
     position begin() const;
 
@@ -40,7 +40,7 @@ public:
 
     position previous(position) const;
 
-    void insert(const value_type &, position);
+    void insert(const value &, position);
 
     void erase(position);
 
@@ -52,7 +52,7 @@ private:
 
     void _create();
 
-    value_type *elements_;
+    value *elements_;
     int length_ = 0; // the length of the list
     int array_dimension_; // array's dimension
 };
@@ -134,7 +134,7 @@ bool ListVector<T>::end(position p) const {
 }
 
 template<class T>
-typename ListVector<T>::value_type ListVector<T>::read(position p) const {
+typename ListVector<T>::value ListVector<T>::read(position p) const {
     if ((0 < p) && (p < length_ + 1)) { // precondizione
         return (elements_[p - 1]);
     } else {
@@ -143,7 +143,7 @@ typename ListVector<T>::value_type ListVector<T>::read(position p) const {
 }
 
 template<class T>
-void ListVector<T>::write(const value_type &a, position p) {
+void ListVector<T>::write(const value &a, position p) {
     if ((0 < p) && (p < length_ + 1)) { // precondizione
         elements_[p - 1] = a;
     } else {
@@ -152,7 +152,7 @@ void ListVector<T>::write(const value_type &a, position p) {
 }
 
 template<class T>
-void ListVector<T>::insert(const value_type &a, position p) {
+void ListVector<T>::insert(const value &a, position p) {
     if (length_ == array_dimension_) {
         change_dimension_(elements_, array_dimension_, array_dimension_ * 2);
         array_dimension_ = array_dimension_ * 2;

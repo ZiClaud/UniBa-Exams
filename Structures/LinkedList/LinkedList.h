@@ -27,7 +27,7 @@ private:
     ListNode<T> *_pHead;
     int _length = 0; // the length of the list
 public:
-    typedef typename LinearList<T, ListNode<T> *>::value_type value_type;
+    typedef typename LinearList<T, ListNode<T> *>::value value;
     typedef typename LinearList<T, ListNode<T> *>::position position;
 
     // costruttori
@@ -43,10 +43,10 @@ public:
 
     bool empty() const;
 
-    value_type read(position) const;
+    value read(position) const;
 
     // Write x at position p
-    void write(const value_type &, position);
+    void write(const value &, position);
 
     position begin() const;
 
@@ -59,7 +59,7 @@ public:
     position previous(position) const;
 
     // insert an element
-    void insert(const value_type &, position);
+    void insert(const value &, position);
 
     void erase(position);
 
@@ -151,7 +151,7 @@ bool LinkedList<T>::end(position p) const {
 }
 
 template<class T>
-typename LinkedList<T>::value_type
+typename LinkedList<T>::value
 LinkedList<T>::read(position p) const {
     if (!end(p)) {
         return (p->_value);
@@ -160,14 +160,14 @@ LinkedList<T>::read(position p) const {
 }
 
 template<class T>
-void LinkedList<T>::write(const value_type &a, position p) {
+void LinkedList<T>::write(const value &a, position p) {
     if (!end(p)) {
         p->_value = a;
     }
 }
 
 template<class T>
-void LinkedList<T>::insert(const value_type &a, position p) {
+void LinkedList<T>::insert(const value &a, position p) {
     position t = new ListNode<T>;
     t->_value = a;
 
