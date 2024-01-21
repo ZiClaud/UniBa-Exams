@@ -16,18 +16,15 @@ struct FullSize : public std::invalid_argument {
 };
 
 struct RootExists : public std::domain_error {
-    RootExists() : domain_error(
-            "Radice giÃ  presente.") {};
+    RootExists() : domain_error("Radice gia' presente.") {};
 };
 
 struct EmptyTree : public std::domain_error {
-    EmptyTree() : domain_error(
-            "Albero vuoto.") {};
+    EmptyTree() : domain_error("Albero vuoto.") {};
 };
 
 struct NodeExists : public std::domain_error {
-    NodeExists() : domain_error(
-            "Nodo giÃ  presente.") {};
+    NodeExists() : domain_error("Nodo gia' presente.") {};
 };
 
 #endif //ASD_EXAM_STRUCTURES_EXCEPTIONS_H
