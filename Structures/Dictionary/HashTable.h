@@ -119,7 +119,7 @@ MyPair<K, E> *HashTable<K, E>::find(const K &the_key) const {
  *
  * It begins by invoking the method search. If the returned bucket b is empty, then there is no
  * pair in the table with key the_pair.key and the pair the_pair may be inserted into this
- * bucket. If the returned bucket is not empty, then it either contains a pair with key the_pair.key
+ * bucket. If the returned bucket is not isEmpty, then it either contains a pair with key the_pair.key
  * or the table is full. In the former case we change the element component of the pair stored
  * in the bucket to the_pair.element; in the latter, we throw an exception
  */

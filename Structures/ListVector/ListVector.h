@@ -73,7 +73,7 @@ ListVector<T>::ListVector(int dim) {
 
 /* Il costruttore per copia effettua una copia o clone di un oggetto.
  * Questo costruttore viene invocato, per esempio, quando un oggetto viene passato
- * per valore ad una funzione o quando una funzione restituisce un oggetto.
+ * per val ad una funzione o quando una funzione restituisce un oggetto.
  */
 template<class T>
 ListVector<T>::ListVector(const ListVector<T> &Lista) {

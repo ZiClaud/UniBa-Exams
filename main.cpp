@@ -92,10 +92,19 @@ int main() {
 
     cout << "Binary Tree:" << endl;
     TreeBin<int> bt = TreeBin<int>();
+    TreeBin<int> sx = TreeBin<int>();
+    TreeBin<int> dx = TreeBin<int>();
     cout << bt << endl;
-    bt.write(1, bt.root());
-    bt.ins_sx(2);
-    cout << bt.sx(bt.root()) << endl;
+    bt.insRoot(3);
+    cout << bt << endl;
+    cout << bt.read(0) << endl;
+    cout << bt.read(1) << endl;
+    cout << bt.read(2) << endl;
+    sx.insRoot(2);
+    bt.insDx(sx.getRootNode());
+//    bt.insSx(32);
+//    bt.insDx(12);
+//    cout << bt << endl;
 
     cout << "N-Ary Tree:" << endl;
 

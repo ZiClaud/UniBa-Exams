@@ -29,7 +29,7 @@ public:
         if (!isEmpty()) {
             return (elements[testa]);
         } else {
-            throw out_of_range("Queue is empty");
+            throw out_of_range("Queue is isEmpty");
         }
     }
 
@@ -38,7 +38,7 @@ public:
             testa = (testa + 1) % maxLenght;
             lung--;
         } else {
-            throw out_of_range("Queue is empty");
+            throw out_of_range("Queue is isEmpty");
         }
     }
 

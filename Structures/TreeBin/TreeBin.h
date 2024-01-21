@@ -10,70 +10,64 @@
 
 /// @brief Exceptions
 struct NullNode : public std::invalid_argument {
-    NullNode() : invalid_argument(
-            "Parametro nodo nullo.") {};
+    NullNode() : invalid_argument("Node is null") {};
 };
 
 struct FullSize : public std::invalid_argument {
-    FullSize() : invalid_argument(
-            "Dimensione massima raggiunta.") {};
+    FullSize() : invalid_argument("Full size reached") {};
 };
 
 struct RootExists : public std::domain_error {
-    RootExists() : domain_error(
-            "Radice giÃ  presente.") {};
+    RootExists() : domain_error("Root exists") {};
 };
 
 struct EmptyTree : public std::domain_error {
-    EmptyTree() : domain_error(
-            "Albero vuoto.") {};
+    EmptyTree() : domain_error("Tree is isEmpty") {};
 };
 
 struct NodeExists : public std::domain_error {
-    NodeExists() : domain_error(
-            "Node giÃ  presente.") {};
+    NodeExists() : domain_error("Node already exists") {};
 };
 
-/// @brief Interfaccia per un albero binario
+/// @brief Binary Tree Interface
 template<class T, class N>
 class _TreeBin {
     static const int NIL = -1;
 public:
     // tipi
-    typedef T value;
-    typedef N Node;
+    typedef T TT;
+    typedef N TN;
 
     // operatori
-
     virtual void _create() = 0;
 
-    virtual bool empty() const = 0;
+    virtual bool isEmpty() const = 0;
 
-    virtual Node root() const = 0;
+    virtual N getRootNode() const = 0;
 
-    virtual Node parent(Node) const = 0;
+    virtual N getParentNode(N) const = 0;
 
-    virtual Node sx(Node) const = 0;
+    virtual N getSxNode(N) const = 0;
 
-    virtual Node dx(Node) const = 0;
+    virtual N getDxNode(N) const = 0;
 
-    virtual bool sx_empty(Node) const = 0;
+    virtual bool isSxEmpty(N) const = 0;
 
-    virtual bool dx_empty(Node) const = 0;
+    virtual bool isDxEmpty(N) const = 0;
 
     //virtual void costr(_TreeBin<T,N>);
 
-    virtual void erase(Node) = 0;
+    virtual void erase(N) = 0;
 
-    virtual T read(Node) const = 0;
+    virtual T read(N) const = 0;
 
-    virtual void write(Node, value) = 0;
+    virtual void write(N, T) = 0;
 
-    virtual void ins_root(Node) = 0;
+    virtual void insRoot(T) = 0;
 
-    virtual void ins_sx(Node) = 0;
+    virtual void insSx(N) = 0;
 
-    virtual void ins_dx(Node) = 0;
+    virtual void insDx(N) = 0;
 
     // funzioni di servizio da implementare qui
 
@@ -83,17 +77,16 @@ public:
 
     //virtual void postvisit(Node);
 
-
     virtual void print() const;
 
 private:
-    virtual void printSubTree(const Node) const;
+    virtual void printSubTree(const N) const;
 };
 
 template<class T, class N>
 void _TreeBin<T, N>::print() const {
-    if (!empty()) {
-        printSubTree(root());
+    if (!isEmpty()) {
+        printSubTree(getRootNode());
     } else {
         std::cout << "[]" << std::endl;
     }
@@ -101,16 +94,16 @@ void _TreeBin<T, N>::print() const {
 }
 
 template<class T, class N>
-void _TreeBin<T, N>::printSubTree(const Node n) const {
+void _TreeBin<T, N>::printSubTree(const N n) const {
     std::cout << "[" << n << ", ";
-    if (!sx_empty(n)) {
-        printSubTree(sx(n));
+    if (!isSxEmpty(n)) {
+        printSubTree(getSxNode(n));
     } else {
         std::cout << "NIL";
     }
     std::cout << ", ";
-    if (!dx_empty(n)) {
-        printSubTree(dx(n));
+    if (!isDxEmpty(n)) {
+        printSubTree(getDxNode(n));
     } else {
         std::cout << "NIL";
     }
@@ -123,28 +116,24 @@ std::ostream &operator<<(std::ostream &out, const _TreeBin<T, N> &t) {
     return out;
 }
 
-
 /// @brief Binary Tree
 template<class T>
 class TreeBin : public _TreeBin<T, int> {
     static const int NIL = -1;
-
 public:
-
-    typedef typename _TreeBin<T, int>::value value;
-    typedef typename _TreeBin<T, int>::Node Nodo;
+    typedef typename _TreeBin<T, int>::TT TT;
+    typedef typename _TreeBin<T, int>::TN TN;
 
     struct _cella {
-        Nodo genitore;
-        Nodo sinistro;
-        Nodo destro;
-        value valore;
+        TN parent;
+        TN left;
+        TN right;
+        TT val;
     };
 
     typedef struct _cella Cella;
 
     // costruttori e distruttori
-
     TreeBin();
 
     TreeBin(int);
@@ -152,221 +141,221 @@ public:
     ~TreeBin();
 
     // operatori
-
     void _create();
 
-    bool empty() const;
+    bool isEmpty() const;
 
-    Nodo root() const;
+    TN getRootNode() const;
 
-    Nodo parent(Nodo) const;
+    TN getParentNode(TN) const;
 
-    Nodo sx(Nodo) const;
+    TN getSxNode(TN) const;
 
-    Nodo dx(Nodo) const;
+    TN getDxNode(TN) const;
 
-    bool sx_empty(Nodo) const;
+    bool isSxEmpty(TN) const;
 
-    bool dx_empty(Nodo) const;
+    bool isDxEmpty(TN) const;
 
     //void costr(TreeBin<T>);
 
-    void erase(Nodo);
+    void erase(TN);
 
-    T read(Nodo) const;
+    T read(TN) const;
 
-    void write(Nodo, value);
+    void write(TN, TT);
 
-    void ins_root(Nodo);
+    void insRoot(TT);
 
-    void ins_sx(Nodo);
+    void insSx(TN);
 
-    void ins_dx(Nodo);
+    void insDx(TN);
 
 private:
-    int MAXLUNG;
-    Cella *spazio;
-    int nNodi;
-    Nodo inizio;
-    Nodo libera;
+    int MAXLENGTH;
+    Cella *space;
+    int num_nodes;
+    TN start;
+    TN free;
 };
 
+/// Creates a tree with a set number of nodes set to 100
 template<class T>
 TreeBin<T>::TreeBin() {
-    MAXLUNG = 100;
-    spazio = new Cella[MAXLUNG];
+    MAXLENGTH = 100;
+    space = new Cella[MAXLENGTH];
     _create();
 }
 
+/// Creates a tree with a set number of nodes
 template<class T>
-TreeBin<T>::TreeBin(int nNodi): MAXLUNG(nNodi) {
-    spazio = new Cella[nNodi];
+TreeBin<T>::TreeBin(int num_nodes): MAXLENGTH(num_nodes) {
+    space = new Cella[num_nodes];
     _create();
 }
-
 
 template<class T>
 TreeBin<T>::~TreeBin() {
-    erase(inizio);
-    delete[] spazio;
+    erase(start);
+    delete[] space;
 }
 
 template<class T>
 void TreeBin<T>::_create() {
-    inizio = NIL;
-    for (int i = 0; i < MAXLUNG; i++) {
-        spazio[i].sinistro = (i + 1) % MAXLUNG;
+    start = NIL;
+    for (int i = 0; i < MAXLENGTH; i++) {
+        space[i].left = (i + 1) % MAXLENGTH;
     }
 
-    libera = 0;
-    nNodi = 0;
+    free = 0;
+    num_nodes = 0;
 }
 
 template<class T>
-bool TreeBin<T>::empty() const {
-    return (nNodi == 0);
+bool TreeBin<T>::isEmpty() const {
+    return (num_nodes == 0);
 }
 
 template<class T>
-typename TreeBin<T>::Nodo TreeBin<T>::root() const {
-    return (inizio);
+typename TreeBin<T>::TN TreeBin<T>::getRootNode() const {
+    return (start);
 }
 
 template<class T>
-typename TreeBin<T>::Nodo TreeBin<T>::parent(Nodo n) const {
-    if (n != inizio) {
-        return (spazio[n].genitore);
+typename TreeBin<T>::TN TreeBin<T>::getParentNode(TN n) const {
+    if (n != start) {
+        return (space[n].parent);
     } else {
         return (n);
     }
 }
 
 template<class T>
-typename TreeBin<T>::Nodo TreeBin<T>::sx(Nodo n) const {
-    if (!sx_empty(n)) {
-        return (spazio[n].sinistro);
+typename TreeBin<T>::TN TreeBin<T>::getSxNode(TN n) const {
+    if (!isSxEmpty(n)) {
+        return (space[n].left);
     } else {
         return (n);
     }
 };
 
 template<class T>
-typename TreeBin<T>::Nodo TreeBin<T>::dx(Nodo n) const {
-    if (!dx_empty(n)) {
-        return (spazio[n].destro);
+typename TreeBin<T>::TN TreeBin<T>::getDxNode(TN n) const {
+    if (!isDxEmpty(n)) {
+        return (space[n].right);
     } else {
         return (n);
     }
 }
 
 template<class T>
-bool TreeBin<T>::sx_empty(TreeBin<T>::Nodo n) const {
-    return (spazio[n].sinistro == NIL);
+bool TreeBin<T>::isSxEmpty(TN n) const {
+    return (space[n].left == NIL);
 }
 
 template<class T>
-bool TreeBin<T>::dx_empty(TreeBin<T>::Nodo n) const {
-    return (spazio[n].destro == NIL);
+bool TreeBin<T>::isDxEmpty(TN n) const {
+    return (space[n].right == NIL);
 }
 
 template<class T>
-void TreeBin<T>::ins_root(TreeBin<T>::Nodo n) {
-    if (inizio == NIL) {
-        inizio = libera;
-        libera = spazio[libera].sinistro;
-        spazio[inizio].sinistro = NIL;
-        spazio[inizio].destro = NIL;
-        nNodi++;
+void TreeBin<T>::insRoot(TT val) {
+    if (start == NIL) {
+        start = free;
+        free = space[free].left;
+        space[start].left = NIL;
+        space[start].right = NIL;
+        space[start].val = val;
+        num_nodes++;
     } else {
         throw RootExists();
     }
 }
 
-
 template<class T>
-void TreeBin<T>::ins_sx(Nodo n) {
-    if (inizio == NIL) {
+void TreeBin<T>::insSx(TN n) {
+    if (start == NIL) {
         throw EmptyTree();
     } else if (n == NIL) {
         throw NullNode();
-    } else if (spazio[n].sinistro != NIL) {
+    } else if (space[n].left != NIL) {
         throw NodeExists();
-    } else if (nNodi >= MAXLUNG) {
+    } else if (num_nodes >= MAXLENGTH) {
         throw FullSize();
     }
 
-    Nodo q = libera;
-    libera = spazio[libera].sinistro;
-    spazio[n].sinistro = q;
-    spazio[q].sinistro = NIL;
-    spazio[q].genitore = n;
-    spazio[q].destro = NIL;
-    nNodi++;
+    TN q = free;
+    free = space[free].left;
+    space[n].left = q;
+    space[q].left = NIL;
+    space[q].parent = n;
+    space[q].right = NIL;
+    num_nodes++;
 }
 
 template<class T>
-void TreeBin<T>::ins_dx(Nodo n) {
-    if (inizio == NIL) {
+void TreeBin<T>::insDx(TN n) {
+    if (start == NIL) {
         throw EmptyTree();
     } else if (n == NIL) {
         throw NullNode();
-    } else if (spazio[n].destro != NIL) {
+    } else if (space[n].right != NIL) {
         throw NodeExists();
     }
 
-    if (nNodi >= MAXLUNG) {
+    if (num_nodes >= MAXLENGTH) {
         throw FullSize();
     } else {
-        Nodo q = libera;
-        libera = spazio[libera].sinistro;
-        spazio[n].destro = q;
-        spazio[q].genitore = n;
-        spazio[q].sinistro = NIL;
-        spazio[q].destro = NIL;
-        nNodi++;
+        TN q = free;
+        free = space[free].left;
+        space[n].right = q;
+        space[q].parent = n;
+        space[q].left = NIL;
+        space[q].right = NIL;
+        num_nodes++;
     }
 }
 
 template<class T>
-void TreeBin<T>::erase(Nodo n) {
+void TreeBin<T>::erase(TN n) {
     if (n != NIL) {
-        if (!sx_empty(n)) {
-            erase(spazio[n].sinistro);
+        if (!isSxEmpty(n)) {
+            erase(space[n].left);
         }
-        if (!dx_empty(n)) {
-            erase(spazio[n].destro);
+        if (!isDxEmpty(n)) {
+            erase(space[n].right);
         }
-        if (n != inizio) {
-            Nodo p = parent(n);
-            if (spazio[p].sinistro == n) {
-                spazio[p].sinistro = NIL;
+        if (n != start) {
+            TN p = getParentNode(n);
+            if (space[p].left == n) {
+                space[p].left = NIL;
             } else {
-                spazio[p].destro = NIL;
+                space[p].right = NIL;
             }
         } else {
-            inizio = NIL;
+            start = NIL;
         }
-        nNodi--;
-        spazio[n].sinistro = libera;
-        libera = n;
+        num_nodes--;
+        space[n].left = free;
+        free = n;
     } else {
         throw NullNode();
     }
 }
 
 template<class T>
-T TreeBin<T>::read(Nodo n) const {
+T TreeBin<T>::read(TN n) const {
     if (n != NIL) {
-        return (spazio[n].valore);
+        return (space[n].val);
     } else {
         throw NullNode();
     }
 }
 
 template<class T>
-void TreeBin<T>::write(Nodo n, value a) {
+void TreeBin<T>::write(TN n, TT val) {
     if (n != NIL) {
-        spazio[n].valore = a;
+        space[n].val = val;
     } else {
         throw NullNode();
     }

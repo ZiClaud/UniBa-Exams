@@ -43,10 +43,10 @@ class Dictionary {
 public:
     virtual ~Dictionary() {}
 
-    // _create an empty Dictionary
+    // _create an isEmpty Dictionary
     virtual bool empty() const = 0;
 
-    // return true iff the Dictionary is empty
+    // return true iff the Dictionary is isEmpty
     virtual int size() const = 0;
 
     // return the number of pairs in the Dictionary
