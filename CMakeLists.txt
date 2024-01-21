@@ -14,8 +14,6 @@ add_executable(ASD_Exam_Structures main.cpp
         Structures/Queue/Queue.h
         Structures/Dictionary/Dictionary.cpp
         Structures/Dictionary/Dictionary.h
-        Structures/BinTree/BinTree.cpp
-        Structures/BinTree/BinTree.h
         Structures/TreeNary/TreeNary.cpp
         Structures/TreeNary/TreeNary.h
         Structures/PriorityQueue/PriorityQueue.cpp
@@ -23,4 +21,7 @@ add_executable(ASD_Exam_Structures main.cpp
         Structures/LinkedList/LinearList.cpp
         Structures/LinkedList/LinearList.h
         Structures/Dictionary/HashTable.h
+        Structures/BinTree/prof/Bin_treec.h
+        Structures/BinTree/prof/Bin_tree.h
+        Structures/BinTree/prof/exceptions.h
 )

@@ -5,8 +5,9 @@
 #include "Structures/Queue/Queue.h"
 #include "Structures/Dictionary/Dictionary.h"
 #include "Structures/Dictionary/HashTable.h"
-#include "Structures/BinTree/BinTree.h"
+#include "Structures/BinTree/prof/Bin_treec.h"
 
+/*
 void printRandomlyGeneratedTree() {
     BinTree<int> bt;
 
@@ -27,6 +28,7 @@ void printRandomlyGeneratedTree() {
     cout << "Randomly generated tree:\n\n";
     bt.print();
 }
+*/
 
 int main() {
     cout << "Hello, World!" << endl;
@@ -112,12 +114,21 @@ int main() {
     cout << *d1.find(2) << endl;
 
     cout << "Binary Tree:" << endl;
-    BinTree<int> bt;
+    Bin_treec<int> T;
+    typename Bin_treec<int>::Nodo n1 = 0, n2 = 0;
 
-    bt.insert(50, 40, 60, 45, 55, 20, 80, 10, 90, 0);
-    bt.print();
-    bt.clear();
-    printRandomlyGeneratedTree();
+    T.ins_root();
+    T.write(T.root(), 1);
+    n1 = T.root();
+    T.ins_sx(n1);
+    T.ins_dx(n1);
+    T.write(T.sx(n1), 2);
+    n1 = T.dx(n1);
+    T.write(n1, 3);
+    T.ins_dx(n1);
+    T.write(T.dx(n1), 4);
+    T.print();
+    cout << T << endl;
 
     cout << "N-Ary Tree:" << endl;
 
