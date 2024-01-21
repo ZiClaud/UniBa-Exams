@@ -269,4 +269,10 @@ void Bin_treec<T>::printBT(Nodo node) {
     _printBT("", node, false);
 }
 
+template<class T>
+ostream &operator<<(ostream &out, Bin_treec<T> &t) {
+    t.printBT(t.root());
+    return out;
+}
+
 #endif //ASD_EXAM_STRUCTURES_BIN_TREEC_H

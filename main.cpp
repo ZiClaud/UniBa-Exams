@@ -115,7 +115,8 @@ int main() {
 
     cout << "Binary Tree:" << endl;
     Bin_treec<int> T;
-    typename Bin_treec<int>::Nodo n1 = 0, n2 = 0;
+    typename Bin_treec<int>::Nodo n1 = 0;
+    typename Bin_treec<int>::Nodo n2 = 0;
 
     T.ins_root();
     T.write(T.root(), 1);
@@ -127,8 +128,8 @@ int main() {
     T.write(n1, 3);
     T.ins_dx(n1);
     T.write(T.dx(n1), 4);
-    T.printBT(T.root());
     cout << T << endl;
+    T.printBT(T.root());
 
     cout << "N-Ary Tree:" << endl;
 
