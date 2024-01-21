@@ -14,8 +14,8 @@ add_executable(ASD_Exam_Structures main.cpp
         Structures/Queue/Queue.h
         Structures/Dictionary/Dictionary.cpp
         Structures/Dictionary/Dictionary.h
-        Structures/TreeBin/TreeBin.cpp
-        Structures/TreeBin/TreeBin.h
+        Structures/BinTree/BinTree.cpp
+        Structures/BinTree/BinTree.h
         Structures/TreeNary/TreeNary.cpp
         Structures/TreeNary/TreeNary.h
         Structures/PriorityQueue/PriorityQueue.cpp

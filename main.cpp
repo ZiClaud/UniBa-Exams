@@ -5,7 +5,28 @@
 #include "Structures/Queue/Queue.h"
 #include "Structures/Dictionary/Dictionary.h"
 #include "Structures/Dictionary/HashTable.h"
-#include "Structures/TreeBin/TreeBin.h"
+#include "Structures/BinTree/BinTree.h"
+
+void printRandomlyGeneratedTree() {
+    BinTree<int> bt;
+
+    random_device rd;
+    mt19937 rng(rd());
+
+    int MaxCount = 20;
+    int MaxDepth = 5;
+    const int Min = 0, Max = 1000;
+
+    uniform_int_distribution<int> dist(Min, Max);
+
+    while (MaxCount--) {
+        bt.insert(dist(rng));
+        if (bt.get_max_depth() >= MaxDepth) break;
+    }
+
+    cout << "Randomly generated tree:\n\n";
+    bt.print();
+}
 
 int main() {
     cout << "Hello, World!" << endl;
@@ -91,20 +112,12 @@ int main() {
     cout << *d1.find(2) << endl;
 
     cout << "Binary Tree:" << endl;
-    TreeBin<int> bt = TreeBin<int>();
-    TreeBin<int> sx = TreeBin<int>();
-    TreeBin<int> dx = TreeBin<int>();
-    cout << bt << endl;
-    bt.insRoot(3);
-    cout << bt << endl;
-    cout << bt.read(0) << endl;
-    cout << bt.read(1) << endl;
-    cout << bt.read(2) << endl;
-    sx.insRoot(2);
-    bt.insDx(sx.getRootNode());
-//    bt.insSx(32);
-//    bt.insDx(12);
-//    cout << bt << endl;
+    BinTree<int> bt;
+
+    bt.insert(50, 40, 60, 45, 55, 20, 80, 10, 90, 0);
+    bt.print();
+    bt.clear();
+    printRandomlyGeneratedTree();
 
     cout << "N-Ary Tree:" << endl;
 
@@ -116,5 +129,5 @@ int main() {
 }
 
 /*
- * TODO: LinkedList, ListVector, Stack (Stack), Queue, Dictionary, TreeBin, TreeNary, PriorityQueue
+ * TODO: LinkedList, ListVector, Stack (Stack), Queue, Dictionary, BinTree, TreeNary, PriorityQueue
  */
