@@ -5,30 +5,8 @@
 #include "Structures/Queue/Queue.h"
 #include "Structures/Dictionary/Dictionary.h"
 #include "Structures/Dictionary/HashTable.h"
-#include "Structures/BinTree/prof/Bin_treec.h"
-
-/*
-void printRandomlyGeneratedTree() {
-    BinTree<int> bt;
-
-    random_device rd;
-    mt19937 rng(rd());
-
-    int MaxCount = 20;
-    int MaxDepth = 5;
-    const int Min = 0, Max = 1000;
-
-    uniform_int_distribution<int> dist(Min, Max);
-
-    while (MaxCount--) {
-        bt.insert(dist(rng));
-        if (bt.get_max_depth() >= MaxDepth) break;
-    }
-
-    cout << "Randomly generated tree:\n\n";
-    bt.print();
-}
-*/
+#include "Structures/BinTree/Bin_treec.h"
+#include "Structures/TreeList/TreeList.h"
 
 int main() {
     cout << "Hello, World!" << endl;
@@ -113,7 +91,7 @@ int main() {
     cout << *d1.find(p2.key) << endl;
     cout << *d1.find(2) << endl;
 
-    cout << "Binary Tree:" << endl;
+    cout << "Binary tree:" << endl;
     Bin_treec<int> T;
     typename Bin_treec<int>::Nodo n1 = 0;
     typename Bin_treec<int>::Nodo n2 = 0;
@@ -131,8 +109,33 @@ int main() {
     cout << T << endl;
     T.printBT(T.root());
 
-    cout << "N-Ary Tree:" << endl;
+    cout << "N-Ary tree:" << endl;
+    TreeList<char> tree;
 
+    TreeList<char>::node n;
+    tree.insRoot(n);
+    tree.writeNode(tree.root(), 'a');
+
+    tree.insFirst(tree.root(), 'b');
+    tree.insFirst(tree.root(), 'c');
+
+    n = tree.root();
+    n = tree.firstChild(n);
+
+    tree.ins(n, 'd');
+
+    n = tree.root();
+    n = tree.firstChild(n);
+    tree.insFirst(n, 'e');
+    tree.insFirst(n, 'f');
+
+    tree.print();
+
+    n = tree.root();
+    n = tree.firstChild(n);
+    tree.removeSubTree(n);
+
+    tree.print();
 
     cout << "Priority Queue:" << endl;
 
@@ -141,5 +144,5 @@ int main() {
 }
 
 /*
- * TODO: LinkedList, ListVector, Stack (Stack), Queue, Dictionary, BinTree, TreeNary, PriorityQueue
+ * TODO: LinkedList, ListVector, Stack (Stack), Queue, Dictionary, BinTree, TreeList, PriorityQueue
  */

@@ -26,6 +26,8 @@ public:
     ~ListVector();
 
     // operatori
+    void _create();
+
     bool empty() const;
 
     value read(position) const;
@@ -49,8 +51,6 @@ public:
     bool operator==(const ListVector<T> &) const; // tests two list for equality
 private:
     void change_dimension_(T *&, int, int);
-
-    void _create();
 
     value *elements_;
     int length_ = 0; // the length of the list

@@ -9,11 +9,12 @@ add_executable(ASD_Exam_Structures main.cpp
         Structures/Stack/Stack.h
         Structures/Queue/Queue.h
         Structures/Dictionary/Dictionary.h
-        Structures/TreeNary/TreeNary.h
+        Structures/TreeList/TreeList.h
         Structures/PriorityQueue/PriorityQueue.h
         Structures/LinkedList/LinearList.h
         Structures/Dictionary/HashTable.h
-        Structures/BinTree/prof/Bin_treec.h
-        Structures/BinTree/prof/Bin_tree.h
-        Structures/BinTree/prof/exceptions.h
+        Structures/BinTree/Bin_treec.h
+        Structures/BinTree/Bin_tree.h
+        Structures/BinTree/exceptions.h
+        Structures/TreeList/Tree.h
 )
