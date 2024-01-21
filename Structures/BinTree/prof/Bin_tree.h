@@ -65,25 +65,25 @@ void Bin_tree<T, N>::print() const {
     if (!empty())
         printSubTree(root());
     else
-        std::cout << "[]" << std::endl;
-    std::cout << std::endl;
+        cout << "[]" << endl;
+    cout << endl;
 }
 
 template<class T, class N>
 void Bin_tree<T, N>::printSubTree(const Nodo n) const {
-    std::cout << "[" << read(n) << ", ";
+    cout << "[" << read(n) << ", ";
     if (!sx_empty(n))
         printSubTree(sx(n));
-    else std::cout << "NIL";
-    std::cout << ", ";
+    else cout << "NIL";
+    cout << ", ";
     if (!dx_empty(n))
         printSubTree(dx(n));
-    else std::cout << "NIL";
-    std::cout << " ]";
+    else cout << "NIL";
+    cout << " ]";
 }
 
 template<class T, class N>
-std::ostream &operator<<(std::ostream &out, const Bin_tree<T, N> &t) {
+ostream &operator<<(ostream &out, const Bin_tree<T, N> &t) {
     t.print();
     return out;
 }

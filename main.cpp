@@ -127,7 +127,7 @@ int main() {
     T.write(n1, 3);
     T.ins_dx(n1);
     T.write(T.dx(n1), 4);
-    T.print();
+    T.printBT(T.root());
     cout << T << endl;
 
     cout << "N-Ary Tree:" << endl;

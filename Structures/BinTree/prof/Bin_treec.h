@@ -63,12 +63,16 @@ public:
 
     void ins_dx(Nodo);
 
+    void printBT(Nodo node);
+
 private:
     int MAXLUNG;
     Cella *spazio;
     int nNodi;
     Nodo inizio;
     Nodo libera;
+
+    void _printBT(const string &prefix, Nodo node, bool isLeft);
 };
 
 template<class T>
@@ -237,6 +241,32 @@ void Bin_treec<T>::write(Nodo n, value_type a) {
         spazio[n].valore = a;
     else
         throw NullNode();
+}
+
+template<class T>
+void Bin_treec<T>::_printBT(const string &prefix, Nodo node, bool isLeft) {
+    if (node != NIL) {
+        cout << prefix;
+
+        if (node == inizio)
+            cout << "└───";
+        else
+            cout << (isLeft ? "├sx─" : "└dx─");
+
+        // print the value of the node
+        cout << read(node) << endl;
+
+        // enter the next tree level - left and right branch
+        if (!sx_empty(node))
+            _printBT(prefix + (isLeft ? "│   " : "    "), sx(node), true);
+        if (!dx_empty(node))
+            _printBT(prefix + (isLeft ? "│   " : "    "), dx(node), false);
+    }
+}
+
+template<class T>
+void Bin_treec<T>::printBT(Nodo node) {
+    _printBT("", node, false);
 }
 
 #endif //ASD_EXAM_STRUCTURES_BIN_TREEC_H
