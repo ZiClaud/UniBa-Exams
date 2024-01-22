@@ -3,7 +3,8 @@ project(ASD_Exam_Structures)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(ASD_Exam_Structures main.cpp
+add_executable(ASD_Exam_Structures
+        main.cpp
         Structures/LinkedList/LinkedList.h
         Structures/ListVector/ListVector.h
         Structures/Stack/Stack.h
