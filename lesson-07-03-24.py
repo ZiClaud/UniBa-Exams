@@ -27,7 +27,8 @@ def bisezioni(f, a, b, tol, itmax):
 
     it = 0
 
-    while b - a > tol and it < itmax:
+    while abs(b - a) > tol and it < itmax:  # abs(a - b) = |a - b|
+        print("Iterazione ", it)
         it = it + 1
         c = (a + b) / 2
         fc = f(c)
@@ -40,7 +41,7 @@ def bisezioni(f, a, b, tol, itmax):
             a = c
             fa = fc
 
-    if b - a > tol:
+    if abs(b - a) > tol:
         print('precisione non raggiunta')
 
     return c
@@ -52,3 +53,14 @@ def f1(x):
 
 def f2(x):
     return x - exp(-x)
+
+
+def f3(x):
+    return x
+
+
+def f4(x):
+    return (1 / x) - 1
+
+
+print(bisezioni(f3, -200, 0.1, 0.01, 100))
