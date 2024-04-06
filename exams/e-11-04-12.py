@@ -9,7 +9,7 @@ restituisca in output:
 """
 
 
-def collaz(x: int, seq: list[int] = [], n: int = 0):
+def collaz(x: int, seq: list[int], n: int = 0):
     seq.append(x)
     if x == 1:
         return n, seq
