@@ -11,7 +11,7 @@ def laplace(A: list) -> int:
     n = len(A[0])
     if m != n:
         print("Error, matrice non quadrata")
-        return
+        return -1
 
     if n == 1:
         detA = 1
@@ -25,13 +25,27 @@ def laplace(A: list) -> int:
             # v2 - works in matlab
             # A1j = A[2:n, [1:j-1, j+1:n]]
 
-            # vmine - TODO
-            A1j = A[]
-
+            # vmine
+            A1j = removefirst(A)
 
             detA = detA + (-1) ** (j + 1) * A[0][j] * laplace(A1j)
 
     return detA
 
 
+# Removes first line and first column of matrix
+def removefirst(A: list) -> list:
+    ris: list = A[1:]
+
+    for i in range(len(ris)):
+        ris[i] = ris[i][1:]
+
+    return ris
+
+
+print(removefirst([[1, 2], [3, 4]]))
+print(removefirst([[1, 2, 3], [4, 5, 6], [7, 8, 9]]))
+
 print(laplace([[1, 2], [3, 4]]))
+print(laplace([[1, 2, 3], [4, 5, 6], [7, 8, 9]]))
+print(laplace([[0, 0, 0], [4, 5, 6], [7, 8, 9]]))
