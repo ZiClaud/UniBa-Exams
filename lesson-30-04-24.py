@@ -26,18 +26,14 @@ def _sottrai(A: np.array, j_curr: int) -> np.array:
         for val in row:
             if j_curr >= j:
                 break
-            if curr_row[i] == 0:  # or np.array_equal(curr_row, row)
+            if curr_row[i] == 0:
                 i += 1
                 continue
             elif den == 0:
                 den = - val / curr_row[i]
-                print("Den: ", den)
-                # print("-", val, "/", curr_row[i])
 
             if den != 0:
-                # print("val = ", val, "+", curr_row[i], "*", den)
                 val = val + curr_row[i] * den
-                # print(val)
 
             row[i] = val
             i += 1
@@ -83,8 +79,21 @@ Questa funzione drovrà far uso della funzione al punto precedente.
 
 
 def get_rango(A: np.array) -> int:
-    # TODO
-    pass
+    A = riduci_a_scalini(A)
+
+    i: int = 0
+    len_row: int = len(A[0])
+    zero_row: np.array = []
+
+    for j in range(len_row):
+        zero_row.append(0)
+
+    for row in A:
+        if np.array_equal(row, zero_row):
+            break
+        i += 1
+
+    return i
 
 
 if __name__ == '__main__':
@@ -97,5 +106,5 @@ if __name__ == '__main__':
     # print(sottrai(np.array([[1, 2], [3, 4]]), 1))
 
     print(A)
-    print(riduci_a_scalini(A))
+    print(riduci_a_scalini(A)) # TODO: FIX -> Non funziona se e' gia' ridotta a scalini
     print(get_rango(A))
