@@ -8,13 +8,15 @@ Scrivere una funzione Python che ha in input una matrice A generica e restituisc
 
 def riduci_a_scalini(A: np.array) -> np.array:
     for j in range(len(A)):
-        A = sottrai(A, j)
+        A = _sottrai(A, j)
         # A[j][i] = i
+
+    A = _order(A)
 
     return A
 
 
-def sottrai(A: np.array, j_curr: int) -> np.array:
+def _sottrai(A: np.array, j_curr: int) -> np.array:
     curr_row: np.array = A[j_curr]
     j: int = 0
 
@@ -30,16 +32,45 @@ def sottrai(A: np.array, j_curr: int) -> np.array:
             elif den == 0:
                 den = - val / curr_row[i]
                 print("Den: ", den)
-                print("-", val, "/", curr_row[i])
+                # print("-", val, "/", curr_row[i])
 
             if den != 0:
-                print("val = ", val, "+", curr_row[i], "*", den)
+                # print("val = ", val, "+", curr_row[i], "*", den)
                 val = val + curr_row[i] * den
-                print(val)
+                # print(val)
 
             row[i] = val
             i += 1
         j += 1
+
+    return A
+
+
+def _order(A: np.array) -> np.array:
+    len_row: int = len(A[0])
+    zero_row: np.array = []
+
+    zero_row_i: int = -1
+
+    for i in range(len_row):
+        zero_row.append(0)
+
+    for i in range(len(A)):
+        if np.array_equal(A[i], zero_row):
+            zero_row_i = i
+            break
+
+    if zero_row_i == -1:
+        # No changes needed, there's no row of zeros
+        return A
+
+    i: int = zero_row_i + 1
+    while i < len(A):
+        if not np.array_equal(A[i], zero_row):
+            A[zero_row_i] = A[i]
+            A[i] = zero_row
+            A = _order(A)
+        i += 1
 
     return A
 
@@ -58,6 +89,9 @@ def get_rango(A: np.array) -> int:
 
 if __name__ == '__main__':
     A = np.array([[1, 2, 3], [1, 3, 4]])
+    A = np.array([[1, 2, 3], [1, 3, 4], [4, 3, 5]])
+
+    A = np.array([[2., -1, 1], [4, -2, 2], [1, 3, 11], [1, -4, -10]])
 
     # print(sottrai(np.array([[1, 2], [3, 4]]), 0))
     # print(sottrai(np.array([[1, 2], [3, 4]]), 1))
