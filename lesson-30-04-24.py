@@ -102,9 +102,6 @@ if __name__ == '__main__':
 
     A = np.array([[2., -1, 1], [4, -2, 2], [1, 3, 11], [1, -4, -10]])
 
-    # print(sottrai(np.array([[1, 2], [3, 4]]), 0))
-    # print(sottrai(np.array([[1, 2], [3, 4]]), 1))
-
     print(A)
     print(riduci_a_scalini(A)) # TODO: FIX -> Non funziona se e' gia' ridotta a scalini
     print(get_rango(A))
