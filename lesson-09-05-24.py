@@ -46,3 +46,5 @@ if __name__ == '__main__':
     A = np.array([[2., -1, 1], [4, -2, 2], [1, 3, 11], [1, -4, -10]])
 
     print(A)
+
+# TODO: 4 - Slide 6 'interpolazione'

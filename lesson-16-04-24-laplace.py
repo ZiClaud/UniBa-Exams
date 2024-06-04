@@ -26,7 +26,7 @@ def laplace(A: list) -> int:
             # A1j = A[2:n, [1:j-1, j+1:n]]
 
             # vmine
-            A1j = removefirst(A)
+            A1j = remove_first(A)
 
             detA = detA + (-1) ** (j + 1) * A[0][j] * laplace(A1j)
 
@@ -34,7 +34,7 @@ def laplace(A: list) -> int:
 
 
 # Removes first line and first column of matrix
-def removefirst(A: list) -> list:
+def remove_first(A: list) -> list:
     ris: list = A[1:]
 
     for i in range(len(ris)):
@@ -43,8 +43,8 @@ def removefirst(A: list) -> list:
     return ris
 
 
-print(removefirst([[1, 2], [3, 4]]))
-print(removefirst([[1, 2, 3], [4, 5, 6], [7, 8, 9]]))
+print(remove_first([[1, 2], [3, 4]]))
+print(remove_first([[1, 2, 3], [4, 5, 6], [7, 8, 9]]))
 
 print(laplace([[1, 2], [3, 4]]))
 print(laplace([[1, 2, 3], [4, 5, 6], [7, 8, 9]]))
