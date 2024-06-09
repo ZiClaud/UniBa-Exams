@@ -1,0 +1,51 @@
+Esame diviso in due:
+# Laboratorio
+- (prima) - 1.30/2h
+Portare da casa: (penna usb) tutte le realizzazioni
+Non usare quelle del prof, hanno errori
+
+Il prof preferirebbe che usiamo il computer del lab, ma possiamo usare il nostro
+(NON DOBBIAMO CHIEDERE DOVE ATTACCARE IL CARICATORE)
+
+
+## Prova di lab:
+Dato un albero binario di n nodi, contare i sottoalberi che hanno la somma dei nodi pari ad un intero k:
+
+input:
+      0
+    /   \
+ -6      2
+   \    / \
+   11  -4  7
+
+k = 5
+
+Output: 4
+Ci sono 4 sottoalberi con somma 5.
+
+
+# Scritto (entro 90 giorni)
+C'è sempre il primo punto in cui chiede di dire la specifica sintattica e semantica di un tipo
+
+
+## Prova di lab
+
+
+1- dato astratto istogramma
+
+Ci da gli operatori:
+creaIstogramma() -> instogramma,
+inserisciBin(instogramma, bin) -> instogramma,
+incrementaBin(instogramma, bin) -> instogramma,
+decrementaBin
+valoreBin
+moda
+media
+...
+
+
+2- Domande a risposta aperta:
+Spiegare la realizzazione di grafi,
+Fornire pseudocodice di ricerca BFS per alberi,
+Hash,
+...
