@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!--Created with JFLAP 7.1.--><structure>
+	<type>fa</type>
+	<automaton>
+		<note>
+			<text>{w in {a,b}* | w non contiene piu' di due a in sequenza}
+
+{w in {a,b}* | w = {a,b}* ^ aaa } ?
+
+ex: Scrivere bene la definizione, in linguaggio matematico</text>
+			<x>39.0</x>
+			<y>8.0</y>
+		</note>
+	</automaton>
+</structure>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!--Created with JFLAP 7.1.--><structure>
+	<type>fa</type>
+	<automaton>
+		<note>
+			<text>1nd ex: NFA/DFA/GNFA
+2nd ex: Pumping lemma
+3nd ex: Espressioni regolari     
+4nd ex: Descrivere automi
+
+1/3nd ex: Bisezioni?</text>
+			<x>113.0</x>
+			<y>45.0</y>
+		</note>
+	</automaton>
+</structure>
