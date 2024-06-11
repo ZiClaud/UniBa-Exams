@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!--Created with JFLAP 7.1.--><structure>
+	<type>fa</type>
+	<automaton>
+		<!--The list of states.-->
+		<state id="0" name="q0">
+			<x>217.0</x>
+			<y>208.0</y>
+			<initial/>
+		</state>
+		<state id="1" name="q1">
+			<x>412.0</x>
+			<y>215.0</y>
+			<final/>
+		</state>
+		<!--The list of transitions.-->
+		<transition>
+			<from>0</from>
+			<to>0</to>
+			<read>0</read>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>1</to>
+			<read>0</read>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>1</to>
+			<read>1</read>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>0</to>
+			<read>1</read>
+		</transition>
+		<note>
+			<text>Scrivere il DFA/(NFA+DFA+grammatica) che riconosce il linguaggio:
+{w in {0,1}* | il numero di 1 in w è dispari}</text>
+			<x>171.0</x>
+			<y>77.0</y>
+		</note>
+	</automaton>
+</structure>

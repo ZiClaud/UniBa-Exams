@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!--Created with JFLAP 7.1.--><structure>
+	<type>fa</type>
+	<automaton>
+		<!--The list of states.-->
+		<state id="0" name="q0">
+			<x>257.0</x>
+			<y>221.0</y>
+			<initial/>
+			<final/>
+		</state>
+		<state id="1" name="q1">
+			<x>388.0</x>
+			<y>224.0</y>
+			<final/>
+		</state>
+		<state id="2" name="q2">
+			<x>504.0</x>
+			<y>228.0</y>
+		</state>
+		<!--The list of transitions.-->
+		<transition>
+			<from>2</from>
+			<to>2</to>
+			<read>0</read>
+		</transition>
+		<transition>
+			<from>2</from>
+			<to>2</to>
+			<read>1</read>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>0</to>
+			<read>1</read>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>1</to>
+			<read>0</read>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>0</to>
+			<read>1</read>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>2</to>
+			<read>0</read>
+		</transition>
+		<note>
+			<text>Scrivere il DFA/(NFA+DFA+grammatica) che riconosce il linguaggio:
+{w in {0,1}* | w non contiene mai più di due 0 consecutivi}</text>
+			<x>305.0</x>
+			<y>137.0</y>
+		</note>
+	</automaton>
+</structure>

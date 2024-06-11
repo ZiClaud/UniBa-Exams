@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!--Created with JFLAP 7.1.--><structure>
+	<type>fa</type>
+	<automaton>
+		<!--The list of states.-->
+		<state id="0" name="q0">
+			<x>238.0</x>
+			<y>258.0</y>
+			<initial/>
+		</state>
+		<state id="1" name="q1">
+			<x>358.0</x>
+			<y>258.0</y>
+			<final/>
+		</state>
+		<!--The list of transitions.-->
+		<transition>
+			<from>1</from>
+			<to>1</to>
+			<read>0</read>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>0</to>
+			<read>1</read>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>1</to>
+			<read>0</read>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>0</to>
+			<read>1</read>
+		</transition>
+		<note>
+			<text>Scrivere il DFA/(NFA+DFA+grammatica) che riconosce il linguaggio:
+{w in {0,1}* | w è divisibile per 2}</text>
+			<x>291.0</x>
+			<y>131.0</y>
+		</note>
+		<note>
+			<text>Notazione binaria: se finisce per 0 e' divisibile per 2</text>
+			<x>121.0</x>
+			<y>291.0</y>
+		</note>
+		<note>
+			<text>Notazione unaria: stanno un numero pari di 1</text>
+			<x>128.0</x>
+			<y>561.0</y>
+		</note>
+	</automaton>
+</structure>
